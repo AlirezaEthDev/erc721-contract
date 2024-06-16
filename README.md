@@ -1,4 +1,4 @@
-# ERC721 Token
+# ERC721 Contract
 This repository contains the source code for an ERC-721 non-fungible token (NFT) project on the Ethereum blockchain. The project implements the ERC-721 standard, allowing for the creation, management, and trading of unique digital assets.
 
 # Key Features:
