@@ -33,10 +33,10 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver {
     mapping(address => uint256) private nftCount;
     mapping(uint256 => address) private ownerOf;
     mapping(uint256 => address) private approvedOf;
-    mapping(address => address[]) private approvedForAllNFTsOf
+    mapping(address => mapping(address => bool)) private approvedForAllNFTsOf
 
     modifier justTransfer(address _from, address _to, uint256 _tokenId) {
-        require(ownerOf[_tokenId] != address(0x0) && (ownerOf[_tokenId] == msg.sender) && ownerOf[_tokenId] == _from && _to != address(0x0), "03");
+        require(ownerOf[_tokenId] != address(0x0) && (ownerOf[_tokenId] == msg.sender || approvedOf[_tokenId] == msg.sender || approvedForAllNFTsOf[_from][msg.sender]) && ownerOf[_tokenId] == _from && _to != address(0x0), "03");
         // 03: At least one of input data is not valid!
         // Transfer NFT:
         ownerOf[_tokenId] = _to;
@@ -90,19 +90,15 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver {
     }
 
     function setApprovalForAll(address _operator, bool _approved) external{
-        if(_approved){
-            approvedForAllNFTsOf[msg.sender].push(_operator);
-        }else{
-            for (uint i = 0; i < approvedForAllNFTsOf[msg.sender].length; i++){
-                if(approvedForAllNFTsOf[msg.sender][i] == _operator){
-                    for (uint j = i; j < approvedForAllNFTsOf[msg.sender].length - 1 ; j++){
-                        approvedForAllNFTsOf[msg.sender][j] = approvedForAllNFTsOf[msg.sender][j+1];
-                        approvedForAllNFTsOf[msg.sender].length --;
-                    }
-                }
-            }
-        }
+        approvedForAllNFTsOf[msg.sender][_operator] = _approved;
         emit ApprovalForAll(msg.sender, _operator, _approved);
     }
 
+    function getApproved(uint256 _tokenId) external view returns (address){
+        return approvedOf[_tokenId];
+    }
+
+    function isApprovedForAll(address _owner, address _operator) external view returns (bool){
+        return approvedForAllNFTsOf[_owner][_operator];
+    }
 }
