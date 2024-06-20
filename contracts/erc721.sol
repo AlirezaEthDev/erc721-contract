@@ -47,6 +47,8 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
     bytes public collectionName;
     bytes public collectionSymbol;
     address private recipientContractAddress;
+    uint public totalSupplyCounter;
+    uint public lastNftIndexOfCollection;
 
     //Events
     event CollectionCreate(address ownerOfCollection, bytes memory nameOfCollection, bytes memory symbolOfCollection);
@@ -62,6 +64,8 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
     mapping(uint256 => bytes) private uriOf;
     mapping(uint256 => address) private approvedOf;
     mapping(address => mapping(address => bool)) private approvedForAllNFTsOf;
+    mapping(uint => uint256) private nftFromCollection;
+    mapping(uint256 => uint) private nftIndexInCollection;
 
     //Modifiers
     modifier justTransfer(address _from, address _to, uint256 _tokenId) {
@@ -104,12 +108,49 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         return string(collectionSymbol);
     }
 
-    //mint()
+    function mint(address ownerAddress, uint256 tokenId, bytes calldata metadataURI) external returns (bool){
+        require(collectionOwner == msg.sender, "07");
+        // 07: Only the owner of collection can do this job!
+        uint lastNftIndex = lastNftIndexOfOwner[ownerAddress];
+        nftListOfOwner[ownerAddress][lastNftIndex ++] = tokenId;
+        nftIndexOfOwner[ownerAddress][tokenId] = lastNftIndex;
+        nftFromCollection[lastNftIndexOfCollection] = tokenId;
+        nftIndexInCollection[tokenId] = lastNftIndexOfCollection;
+        nftOwner[tokenId] = ownerAddress;
+        uriOf[tokenId] = metadataURI;
+        nftCountOfOwner[ownerAddress] ++;
+        lastNftIndexOfOwner[ownerAddress] ++;
+        totalSupplyCounter ++;
+        lastNftIndexOfCollection ++;
+        assembly{
+            codeSize := extcodesize(ownerAddress);
+        }
+        if(codeSize > 0){
+            recipientContractAddress = ownerAddress;
+            bytes4 functionSelector = this.onERC721Received(address(0x0), address(0x0), tokenId, "");
+            require(functionSelector == bytes4(keccak256("onERC721Received(address,address,uint256,bytes)")), "04");
+            // 04: The recipient contract couldn't handle the NFT receipt!
+        }
+        emit Transfer(address(0x0), ownerAddress, tokenId);
+        return true;
+    }
 
-    //burn()
+    function burn(uint256 tokenId) external returns (bool){
+        uint nftIndex = nftIndexOfOwner[msg.sender][tokenId];
+        nftListOfOwner[msg.sender][nftIndex] = 0;
+        nftOwner[tokenId] = address(0x0);
+        uriOf[tokenId] = address(0x0);
+        approvedOf[tokenId] = address(0x0);
+        nftCountOfOwner[msg.sender] --;
+        nftIndexInCollection[tokenId] = lastNftIndexOfCollection;
+        nftFromCollection[lastNftIndexOfCollection] = 0;
+        totalSupplyCounter --;
+        emit Transfer(msg.sender, address(0x0), tokenId);
+        return true;
+    }
 
     function totalSupply() external view returns (uint256){
-        return nftListOfCollection.length;
+        return totalSupplyCounter;
     }
 
     function tokenURI(uint256 _tokenId) external view returns (string){
@@ -117,9 +158,9 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
     }
 
     function tokenByIndex(uint256 _index) external view returns (uint256){
-        require(_index <= nftListOfCollection.length, "06");
+        require(_index <= lastNftIndexOfCollection, "06");
         // 06: The NFT index is invalid!
-        return nftListOfCollection[_index - 1];
+        return nftFromCollection[_index];
     }
 
     function balanceOf(address _owner) external view returns (uint256){
