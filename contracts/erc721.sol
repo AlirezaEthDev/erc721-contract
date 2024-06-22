@@ -29,9 +29,9 @@ interface IERC721 {
 }
 
 interface IERC721Metadata {
-    function name() external view returns (string _name);
-    function symbol() external view returns (string _symbol);
-    function tokenURI(uint256 _tokenId) external view returns (string);
+    function name() external view returns (string memory);
+    function symbol() external view returns (string memory);
+    function tokenURI(uint256 _tokenId) external view returns (string memory);
 }
 
 interface ERC721Enumerable {
@@ -51,8 +51,8 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
     uint public lastNftIndexOfCollection;
 
     //Events
-    event CollectionCreate(address ownerOfCollection, bytes memory nameOfCollection, bytes memory symbolOfCollection);
-    event CollectionRename(bytes memory previousName, bytes memory currentName, bytes memory previousSymbol, bytes memory currentSymbol);
+    event CollectionCreate(address ownerOfCollection, bytes nameOfCollection, bytes symbolOfCollection);
+    event CollectionRename(bytes previousName, bytes currentName, bytes previousSymbol, bytes currentSymbol);
 
     //Mappings
     mapping(bytes4 => bool) private supportedInterfaces;
@@ -69,7 +69,7 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
 
     //Modifiers
     modifier justTransfer(address _from, address _to, uint256 _tokenId) {
-        require(nftOwner[_tokenId] != address(0x0) && (nftOwner[_tokenId] == msg.sender || approvedOf[_tokenId] == msg.sender || approvedForAllNFTsOf[_from][msg.sender]) && nftOwner[_tokenId] == _from && _to != address(0x0), "03");
+        require( nftOwner[_tokenId] != address(0x0) && (nftOwner[_tokenId] == tx.origin || approvedOf[_tokenId] == tx.origin || approvedForAllNFTsOf[_from][tx.origin]) && nftOwner[_tokenId] == _from && _to != address(0x0), "03");
         // 03: At least one of input data is not valid!
         // Transfer NFT:
         nftOwner[_tokenId] = _to;
@@ -87,12 +87,12 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         collectionOwner = msg.sender;
         collectionName = nameOfCollection;
         collectionSymbol = symbolOfCollection;
-        bytes4[3] interfaceId = interfaceIdGenerator();
+        (bytes4 erc721Id, bytes4 erc721MetadataId, bytes4 erc721EnumerableId) = interfaceIdGenerator();
         supportedInterfaces[this.onERC721Received.selector] = true;
         supportedInterfaces[this.supportsInterface.selector] = true;
-        supportedInterfaces[interfaceId[0]] = true;
-        supportedInterfaces[interfaceId[1]] = true;
-        supportedInterfaces[interfaceId[2]] = true;
+        supportedInterfaces[erc721Id] = true;
+        supportedInterfaces[erc721MetadataId] = true;
+        supportedInterfaces[erc721EnumerableId] = true;
         emit CollectionCreate(collectionOwner, collectionName, collectionSymbol);
     }
 
@@ -100,11 +100,11 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         return supportedInterfaces[interfaceID];
     }
 
-    function name() external view returns (string _name){
+    function name() external view returns (string memory){
         return string(collectionName);
     }
 
-    function symbol() external view returns (string _symbol){
+    function symbol() external view returns (string memory){
         return string(collectionSymbol);
     }
 
@@ -122,8 +122,9 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         lastNftIndexOfOwner[ownerAddress] ++;
         totalSupplyCounter ++;
         lastNftIndexOfCollection ++;
+        uint codeSize;
         assembly{
-            codeSize := extcodesize(ownerAddress);
+            codeSize := extcodesize(ownerAddress)
         }
         if(codeSize > 0){
             recipientContractAddress = ownerAddress;
@@ -139,7 +140,7 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         uint nftIndex = nftIndexOfOwner[msg.sender][tokenId];
         nftListOfOwner[msg.sender][nftIndex] = 0;
         nftOwner[tokenId] = address(0x0);
-        uriOf[tokenId] = address(0x0);
+        uriOf[tokenId] = "";
         approvedOf[tokenId] = address(0x0);
         nftCountOfOwner[msg.sender] --;
         nftIndexInCollection[tokenId] = lastNftIndexOfCollection;
@@ -153,7 +154,7 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         return totalSupplyCounter;
     }
 
-    function tokenURI(uint256 _tokenId) external view returns (string){
+    function tokenURI(uint256 _tokenId) external view returns (string memory){
         return string(uriOf[_tokenId]);
     }
 
@@ -177,14 +178,15 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
     function ownerOf(uint256 _tokenId) external view returns (address){
         require(nftOwner[_tokenId] != address(0x0), "02");
         // 02: The token is invalid!
+        return (nftOwner[_tokenId]);
     }
 
-    function collectionRename(bytes calldata name, bytes calldata symbol) external {
+    function collectionRename(bytes calldata newName, bytes calldata newSymbol) external {
         require(collectionOwner == msg.sender, "08");
         // 08: Only collection owner can rename it!
-        emit CollectionRename(collectionName, name, collectionSymbol, symbol);
-        collectionName = name;
-        collectionSymbol = symbol;
+        emit CollectionRename(collectionName, newName, collectionSymbol, newSymbol);
+        collectionName = newName;
+        collectionSymbol = newSymbol;
     }
 
     function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes calldata data) external justTransfer(_from, _to, _tokenId) payable{    
