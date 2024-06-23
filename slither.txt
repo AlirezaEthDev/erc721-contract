@@ -1,0 +1,82 @@
+Compilation warnings/errors on erc721.sol:
+Warning: "this" used in constructor. Note that external functions of a contract cannot be called while it is being constructed.
+  --> erc721.sol:91:29:
+   |
+91 |         supportedInterfaces[this.onERC721Received.selector] = true;
+   |                             ^^^^
+
+Warning: "this" used in constructor. Note that external functions of a contract cannot be called while it is being constructed.
+  --> erc721.sol:92:29:
+   |
+92 |         supportedInterfaces[this.supportsInterface.selector] = true;
+   |                             ^^^^
+
+
+
+Contract locking ether found:
+        Contract ERC721 (erc721.sol#44-257) has payable functions:
+         - IERC721.safeTransferFrom(address,address,uint256,bytes) (erc721.sol#22)
+         - IERC721.safeTransferFrom(address,address,uint256) (erc721.sol#23)
+         - IERC721.transferFrom(address,address,uint256) (erc721.sol#24)
+         - IERC721.approve(address,uint256) (erc721.sol#25)
+         - ERC721.safeTransferFrom(address,address,uint256,bytes) (erc721.sol#192-207)
+         - ERC721.safeTransferFrom(address,address,uint256) (erc721.sol#209-211)
+         - ERC721.transferFrom(address,address,uint256) (erc721.sol#213-216)
+         - ERC721.approve(address,uint256) (erc721.sol#218-223)
+        But does not have a function to withdraw the ether
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#contracts-that-lock-ether
+
+ERC721.mint(address,uint256,bytes).ownerAddress (erc721.sol#111) lacks a zero-check on :
+                - recipientContractAddress = ownerAddress (erc721.sol#130)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+Reentrancy in ERC721.mint(address,uint256,bytes) (erc721.sol#111-137):
+        External calls:
+        - functionSelector = this.onERC721Received(address(0x0),address(0x0),tokenId,) (erc721.sol#131)
+        Event emitted after the call(s):
+        - Transfer(address(0x0),ownerAddress,tokenId) (erc721.sol#135)
+Reentrancy in ERC721.safeTransferFrom(address,address,uint256,bytes) (erc721.sol#192-207):
+        External calls:
+        - functionSelector = this.onERC721Received(operator,_from,_tokenId,data) (erc721.sol#201)
+        Event emitted after the call(s):
+        - Approval(msg.sender,address(0x0),_tokenId) (erc721.sol#206)
+        - Transfer(_from,_to,_tokenId) (erc721.sol#205)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-3
+
+ERC721.mint(address,uint256,bytes) (erc721.sol#111-137) uses assembly
+        - INLINE ASM (erc721.sol#126-128)
+ERC721.safeTransferFrom(address,address,uint256,bytes) (erc721.sol#192-207) uses assembly
+        - INLINE ASM (erc721.sol#196-198)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage
+
+Pragma version^0.8.0 (erc721.sol#3) allows old versions
+solc-0.8.9 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Parameter ERC721.tokenURI(uint256)._tokenId (erc721.sol#157) is not in mixedCase
+Parameter ERC721.tokenByIndex(uint256)._index (erc721.sol#161) is not in mixedCase
+Parameter ERC721.balanceOf(address)._owner (erc721.sol#167) is not in mixedCase
+Parameter ERC721.tokenOfOwnerByIndex(address,uint256)._owner (erc721.sol#173) is not in mixedCase
+Parameter ERC721.tokenOfOwnerByIndex(address,uint256)._index (erc721.sol#173) is not in mixedCase
+Parameter ERC721.ownerOf(uint256)._tokenId (erc721.sol#178) is not in mixedCase
+Parameter ERC721.safeTransferFrom(address,address,uint256,bytes)._from (erc721.sol#192) is not in mixedCase
+Parameter ERC721.safeTransferFrom(address,address,uint256,bytes)._to (erc721.sol#192) is not in mixedCase
+Parameter ERC721.safeTransferFrom(address,address,uint256,bytes)._tokenId (erc721.sol#192) is not in mixedCase
+Parameter ERC721.safeTransferFrom(address,address,uint256)._from (erc721.sol#209) is not in mixedCase
+Parameter ERC721.safeTransferFrom(address,address,uint256)._to (erc721.sol#209) is not in mixedCase
+Parameter ERC721.safeTransferFrom(address,address,uint256)._tokenId (erc721.sol#209) is not in mixedCase
+Parameter ERC721.transferFrom(address,address,uint256)._from (erc721.sol#213) is not in mixedCase
+Parameter ERC721.transferFrom(address,address,uint256)._to (erc721.sol#213) is not in mixedCase
+Parameter ERC721.transferFrom(address,address,uint256)._tokenId (erc721.sol#213) is not in mixedCase
+Parameter ERC721.approve(address,uint256)._approved (erc721.sol#218) is not in mixedCase
+Parameter ERC721.approve(address,uint256)._tokenId (erc721.sol#218) is not in mixedCase
+Parameter ERC721.s(address,bool)._operator (erc721.sol#225) is not in mixedCase
+Parameter ERC721.s(address,bool)._approved (erc721.sol#225) is not in mixedCase
+Parameter ERC721.getApproved(uint256)._tokenId (erc721.sol#230) is not in mixedCase
+Parameter ERC721.isApprovedForAll(address,address)._owner (erc721.sol#234) is not in mixedCase
+Parameter ERC721.isApprovedForAll(address,address)._operator (erc721.sol#234) is not in mixedCase
+Parameter ERC721.onERC721Received(address,address,uint256,bytes)._operator (erc721.sol#252) is not in mixedCase
+Parameter ERC721.onERC721Received(address,address,uint256,bytes)._from (erc721.sol#252) is not in mixedCase
+Parameter ERC721.onERC721Received(address,address,uint256,bytes)._tokenId (erc721.sol#252) is not in mixedCase
+Parameter ERC721.onERC721Received(address,address,uint256,bytes)._data (erc721.sol#252) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions

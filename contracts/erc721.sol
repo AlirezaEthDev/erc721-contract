@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.5.12;
+pragma solidity ^0.8.0;
 
 // Interfaces
 interface IERC721TokenReceiver {
@@ -23,7 +23,7 @@ interface IERC721 {
     function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;
     function transferFrom(address _from, address _to, uint256 _tokenId) external payable;
     function approve(address _approved, uint256 _tokenId) external payable;
-    function setApprovalForAll(address _operator, bool _approved) external;
+    function s(address _operator, bool _approved) external;
     function getApproved(uint256 _tokenId) external view returns (address);
     function isApprovedForAll(address _owner, address _operator) external view returns (bool);
 }
@@ -83,7 +83,7 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
     }
 
     //Functions
-    constructor(bytes memory nameOfCollection, bytes memory symbolOfCollection) public{
+    constructor(bytes memory nameOfCollection, bytes memory symbolOfCollection) {
         collectionOwner = msg.sender;
         collectionName = nameOfCollection;
         collectionSymbol = symbolOfCollection;
@@ -96,15 +96,15 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         emit CollectionCreate(collectionOwner, collectionName, collectionSymbol);
     }
 
-    function supportsInterface(bytes4 interfaceID) external view returns (bool){
+    function supportsInterface(bytes4 interfaceID) external override view returns (bool){
         return supportedInterfaces[interfaceID];
     }
 
-    function name() external view returns (string memory){
+    function name() external override view returns (string memory){
         return string(collectionName);
     }
 
-    function symbol() external view returns (string memory){
+    function symbol() external override view returns (string memory){
         return string(collectionSymbol);
     }
 
@@ -150,32 +150,32 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         return true;
     }
 
-    function totalSupply() external view returns (uint256){
+    function totalSupply() external override view returns (uint256){
         return totalSupplyCounter;
     }
 
-    function tokenURI(uint256 _tokenId) external view returns (string memory){
+    function tokenURI(uint256 _tokenId) external override view returns (string memory){
         return string(uriOf[_tokenId]);
     }
 
-    function tokenByIndex(uint256 _index) external view returns (uint256){
+    function tokenByIndex(uint256 _index) external override view returns (uint256){
         require(_index <= lastNftIndexOfCollection, "06");
         // 06: The NFT index is invalid!
         return nftFromCollection[_index];
     }
 
-    function balanceOf(address _owner) external view returns (uint256){
+    function balanceOf(address _owner) external override view returns (uint256){
         require(_owner != address(0x0), "01");
         // 01: Zero address is not valid!
         return nftCountOfOwner[_owner];
     }
 
-    function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256){
+    function tokenOfOwnerByIndex(address _owner, uint256 _index) external override view returns (uint256){
         require(_index <= nftCountOfOwner[_owner], "06");
         return nftListOfOwner[_owner][_index];
     }
 
-    function ownerOf(uint256 _tokenId) external view returns (address){
+    function ownerOf(uint256 _tokenId) external override view returns (address){
         require(nftOwner[_tokenId] != address(0x0), "02");
         // 02: The token is invalid!
         return (nftOwner[_tokenId]);
@@ -189,7 +189,7 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         collectionSymbol = newSymbol;
     }
 
-    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes calldata data) external justTransfer(_from, _to, _tokenId) payable{    
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes calldata data) external override justTransfer(_from, _to, _tokenId) payable{    
         // Ensure if the recipient is a contract it handles the NFT receipt:
         uint codeSize;
         address operator = msg.sender;
@@ -206,32 +206,32 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         emit Approval(msg.sender, address(0x0), _tokenId);
     }
 
-    function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable{
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId) external override payable{
         this.safeTransferFrom(_from, _to, _tokenId, "");
     }
 
-    function transferFrom(address _from, address _to, uint256 _tokenId) external justTransfer(_from, _to, _tokenId) payable{
+    function transferFrom(address _from, address _to, uint256 _tokenId) external override justTransfer(_from, _to, _tokenId) payable{
         emit Transfer(_from, _to, _tokenId);
         emit Approval(msg.sender, address(0x0), _tokenId);
     }
 
-    function approve(address _approved, uint256 _tokenId) external payable{
+    function approve(address _approved, uint256 _tokenId) external override payable{
         require(nftOwner[_tokenId] == msg.sender, "05");
         // 05: The account is not authorized!;
         approvedOf[_tokenId] = _approved;
         emit Approval(msg.sender, _approved, _tokenId);
     }
 
-    function setApprovalForAll(address _operator, bool _approved) external{
+    function s(address _operator, bool _approved) external override{
         approvedForAllNFTsOf[msg.sender][_operator] = _approved;
         emit ApprovalForAll(msg.sender, _operator, _approved);
     }
 
-    function getApproved(uint256 _tokenId) external view returns (address){
+    function getApproved(uint256 _tokenId) external override view returns (address){
         return approvedOf[_tokenId];
     }
 
-    function isApprovedForAll(address _owner, address _operator) external view returns (bool){
+    function isApprovedForAll(address _owner, address _operator) external override view returns (bool){
         return approvedForAllNFTsOf[_owner][_operator];
     }
 
@@ -242,14 +242,14 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
                             bytes4(keccak256("safeTransferFrom(address,address,uint256)")) ^
                             bytes4(keccak256("transferFrom(address,address,uint256)")) ^
                             bytes4(keccak256("approve(address,uint256)")) ^
-                            bytes4(keccak256("setApprovalForAll(address,bool)")) ^
+                            bytes4(keccak256("s(address,bool)")) ^
                             bytes4(keccak256("getApproved(uint256)")) ^
                             bytes4(keccak256("isApprovedForAll(address,address)"));
             bytes4 erc721MetadataId = this.name.selector ^ this.symbol.selector ^ this.tokenURI.selector;
             bytes4 erc721EnumerableId = this.totalSupply.selector ^ this.tokenByIndex.selector ^ this.tokenOfOwnerByIndex.selector;
             return (erc721Id, erc721MetadataId, erc721EnumerableId);
     }
-    function onERC721Received(address _operator, address _from, uint256 _tokenId, bytes calldata _data) external returns(bytes4){
+    function onERC721Received(address _operator, address _from, uint256 _tokenId, bytes calldata _data) external override returns(bytes4){
         IERC721TokenReceiver recipientContract = IERC721TokenReceiver(recipientContractAddress);
         return recipientContract.onERC721Received(_operator, _from, _tokenId, _data);
     }
