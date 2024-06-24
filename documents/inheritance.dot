@@ -1,0 +1,14 @@
+digraph G {
+  graph [ ratio = "auto", page = "40" ];
+  "ERC721";
+  "IERC165";
+  "IERC721";
+  "IERC721TokenReceiver";
+  "IERC721Metadata";
+  "ERC721Enumerable";
+  "ERC721" -> "IERC165";
+  "ERC721" -> "IERC721";
+  "ERC721" -> "IERC721TokenReceiver";
+  "ERC721" -> "IERC721Metadata";
+  "ERC721" -> "ERC721Enumerable";
+}

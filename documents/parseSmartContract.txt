@@ -1,0 +1,4282 @@
+├─ type: SourceUnit
+└─ children
+   ├─ 0
+   │  ├─ type: PragmaDirective
+   │  ├─ name: solidity
+   │  └─ value: ^0.8.0
+   ├─ 1
+   │  ├─ type: ImportDirective
+   │  ├─ path: ../interface/IERC721TokenReceiver.sol
+   │  ├─ pathLiteral
+   │  │  ├─ type: StringLiteral
+   │  │  ├─ value: ../interface/IERC721TokenReceiver.sol
+   │  │  ├─ parts
+   │  │  │  └─ 0: ../interface/IERC721TokenReceiver.sol
+   │  │  └─ isUnicode
+   │  │     └─ 0: false
+   │  ├─ unitAlias
+   │  ├─ unitAliasIdentifier
+   │  ├─ symbolAliases
+   │  └─ symbolAliasesIdentifiers
+   ├─ 2
+   │  ├─ type: ImportDirective
+   │  ├─ path: ../interface/IERC165.sol
+   │  ├─ pathLiteral
+   │  │  ├─ type: StringLiteral
+   │  │  ├─ value: ../interface/IERC165.sol
+   │  │  ├─ parts
+   │  │  │  └─ 0: ../interface/IERC165.sol
+   │  │  └─ isUnicode
+   │  │     └─ 0: false
+   │  ├─ unitAlias
+   │  ├─ unitAliasIdentifier
+   │  ├─ symbolAliases
+   │  └─ symbolAliasesIdentifiers
+   ├─ 3
+   │  ├─ type: ImportDirective
+   │  ├─ path: ../interface/IERC721.sol
+   │  ├─ pathLiteral
+   │  │  ├─ type: StringLiteral
+   │  │  ├─ value: ../interface/IERC721.sol
+   │  │  ├─ parts
+   │  │  │  └─ 0: ../interface/IERC721.sol
+   │  │  └─ isUnicode
+   │  │     └─ 0: false
+   │  ├─ unitAlias
+   │  ├─ unitAliasIdentifier
+   │  ├─ symbolAliases
+   │  └─ symbolAliasesIdentifiers
+   ├─ 4
+   │  ├─ type: ImportDirective
+   │  ├─ path: ../interface/IERC721Metadata.sol
+   │  ├─ pathLiteral
+   │  │  ├─ type: StringLiteral
+   │  │  ├─ value: ../interface/IERC721Metadata.sol
+   │  │  ├─ parts
+   │  │  │  └─ 0: ../interface/IERC721Metadata.sol
+   │  │  └─ isUnicode
+   │  │     └─ 0: false
+   │  ├─ unitAlias
+   │  ├─ unitAliasIdentifier
+   │  ├─ symbolAliases
+   │  └─ symbolAliasesIdentifiers
+   ├─ 5
+   │  ├─ type: ImportDirective
+   │  ├─ path: ../interface/IERC721Enumerable.sol
+   │  ├─ pathLiteral
+   │  │  ├─ type: StringLiteral
+   │  │  ├─ value: ../interface/IERC721Enumerable.sol
+   │  │  ├─ parts
+   │  │  │  └─ 0: ../interface/IERC721Enumerable.sol
+   │  │  └─ isUnicode
+   │  │     └─ 0: false
+   │  ├─ unitAlias
+   │  ├─ unitAliasIdentifier
+   │  ├─ symbolAliases
+   │  └─ symbolAliasesIdentifiers
+   └─ 6
+      ├─ type: ContractDefinition
+      ├─ name: ERC721
+      ├─ baseContracts
+      │  ├─ 0
+      │  │  ├─ type: InheritanceSpecifier
+      │  │  ├─ baseName
+      │  │  │  ├─ type: UserDefinedTypeName
+      │  │  │  └─ namePath: IERC165
+      │  │  └─ arguments
+      │  ├─ 1
+      │  │  ├─ type: InheritanceSpecifier
+      │  │  ├─ baseName
+      │  │  │  ├─ type: UserDefinedTypeName
+      │  │  │  └─ namePath: IERC721
+      │  │  └─ arguments
+      │  ├─ 2
+      │  │  ├─ type: InheritanceSpecifier
+      │  │  ├─ baseName
+      │  │  │  ├─ type: UserDefinedTypeName
+      │  │  │  └─ namePath: IERC721TokenReceiver
+      │  │  └─ arguments
+      │  ├─ 3
+      │  │  ├─ type: InheritanceSpecifier
+      │  │  ├─ baseName
+      │  │  │  ├─ type: UserDefinedTypeName
+      │  │  │  └─ namePath: IERC721Metadata
+      │  │  └─ arguments
+      │  └─ 4
+      │     ├─ type: InheritanceSpecifier
+      │     ├─ baseName
+      │     │  ├─ type: UserDefinedTypeName
+      │     │  └─ namePath: ERC721Enumerable
+      │     └─ arguments
+      ├─ subNodes
+      │  ├─ 0
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: address
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: collectionOwner
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: collectionOwner
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: public
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 1
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bytes
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: collectionName
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: collectionName
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: public
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 2
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bytes
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: collectionSymbol
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: collectionSymbol
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: public
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 3
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: address
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: recipientContractAddress
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: recipientContractAddress
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 4
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: totalSupplyCounter
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: totalSupplyCounter
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: public
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 5
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: lastNftIndexOfCollection
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: lastNftIndexOfCollection
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: public
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 6
+      │  │  ├─ type: EventDefinition
+      │  │  ├─ name: CollectionCreate
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: ownerOfCollection
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: ownerOfCollection
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 1
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: nameOfCollection
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: nameOfCollection
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  └─ expression
+      │  │  │  └─ 2
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bytes
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: symbolOfCollection
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: symbolOfCollection
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ storageLocation
+      │  │  │     └─ expression
+      │  │  └─ isAnonymous: false
+      │  ├─ 7
+      │  │  ├─ type: EventDefinition
+      │  │  ├─ name: CollectionRename
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: previousName
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: previousName
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 1
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: currentName
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: currentName
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 2
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: previousSymbol
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: previousSymbol
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  └─ expression
+      │  │  │  └─ 3
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bytes
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: currentSymbol
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: currentSymbol
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ storageLocation
+      │  │  │     └─ expression
+      │  │  └─ isAnonymous: false
+      │  ├─ 8
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: bytes4
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: ElementaryTypeName
+      │  │  │     │     ├─ name: bool
+      │  │  │     │     └─ stateMutability
+      │  │  │     ├─ name: supportedInterfaces
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: supportedInterfaces
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 9
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: address
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: ElementaryTypeName
+      │  │  │     │     ├─ name: uint256
+      │  │  │     │     └─ stateMutability
+      │  │  │     ├─ name: nftCountOfOwner
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: nftCountOfOwner
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 10
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: address
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: Mapping
+      │  │  │     │     ├─ keyType
+      │  │  │     │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  ├─ name: uint
+      │  │  │     │     │  └─ stateMutability
+      │  │  │     │     └─ valueType
+      │  │  │     │        ├─ type: ElementaryTypeName
+      │  │  │     │        ├─ name: uint256
+      │  │  │     │        └─ stateMutability
+      │  │  │     ├─ name: nftListOfOwner
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: nftListOfOwner
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 11
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: address
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: Mapping
+      │  │  │     │     ├─ keyType
+      │  │  │     │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  ├─ name: uint256
+      │  │  │     │     │  └─ stateMutability
+      │  │  │     │     └─ valueType
+      │  │  │     │        ├─ type: ElementaryTypeName
+      │  │  │     │        ├─ name: uint
+      │  │  │     │        └─ stateMutability
+      │  │  │     ├─ name: nftIndexOfOwner
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: nftIndexOfOwner
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 12
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: address
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: ElementaryTypeName
+      │  │  │     │     ├─ name: uint
+      │  │  │     │     └─ stateMutability
+      │  │  │     ├─ name: lastNftIndexOfOwner
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: lastNftIndexOfOwner
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 13
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: uint256
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: ElementaryTypeName
+      │  │  │     │     ├─ name: address
+      │  │  │     │     └─ stateMutability
+      │  │  │     ├─ name: nftOwner
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: nftOwner
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 14
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: uint256
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: ElementaryTypeName
+      │  │  │     │     ├─ name: bytes
+      │  │  │     │     └─ stateMutability
+      │  │  │     ├─ name: uriOf
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: uriOf
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 15
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: uint256
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: ElementaryTypeName
+      │  │  │     │     ├─ name: address
+      │  │  │     │     └─ stateMutability
+      │  │  │     ├─ name: approvedOf
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: approvedOf
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 16
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: address
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: Mapping
+      │  │  │     │     ├─ keyType
+      │  │  │     │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  ├─ name: address
+      │  │  │     │     │  └─ stateMutability
+      │  │  │     │     └─ valueType
+      │  │  │     │        ├─ type: ElementaryTypeName
+      │  │  │     │        ├─ name: bool
+      │  │  │     │        └─ stateMutability
+      │  │  │     ├─ name: approvedForAllNFTsOf
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: approvedForAllNFTsOf
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 17
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: uint
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: ElementaryTypeName
+      │  │  │     │     ├─ name: uint256
+      │  │  │     │     └─ stateMutability
+      │  │  │     ├─ name: nftFromCollection
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: nftFromCollection
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 18
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: uint256
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: ElementaryTypeName
+      │  │  │     │     ├─ name: uint
+      │  │  │     │     └─ stateMutability
+      │  │  │     ├─ name: nftIndexInCollection
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: nftIndexInCollection
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 19
+      │  │  ├─ type: ModifierDefinition
+      │  │  ├─ name: justTransfer
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _from
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _from
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 1
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _to
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _to
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 2
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _tokenId
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _tokenId
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: &&
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  ├─ operator: &&
+      │  │  │     │     │  │  │  ├─ left
+      │  │  │     │     │  │  │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  │  ├─ operator: &&
+      │  │  │     │     │  │  │  │  ├─ left
+      │  │  │     │     │  │  │  │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  │  │  ├─ operator: !=
+      │  │  │     │     │  │  │  │  │  ├─ left
+      │  │  │     │     │  │  │  │  │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  │  │  │  │  ├─ base
+      │  │  │     │     │  │  │  │  │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  │  │  │  └─ name: nftOwner
+      │  │  │     │     │  │  │  │  │  │  └─ index
+      │  │  │     │     │  │  │  │  │  │     ├─ type: Identifier
+      │  │  │     │     │  │  │  │  │  │     └─ name: _tokenId
+      │  │  │     │     │  │  │  │  │  └─ right
+      │  │  │     │     │  │  │  │  │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │  │  │     ├─ expression
+      │  │  │     │     │  │  │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │  │  │  │     │  ├─ name: address
+      │  │  │     │     │  │  │  │  │     │  └─ stateMutability
+      │  │  │     │     │  │  │  │  │     ├─ arguments
+      │  │  │     │     │  │  │  │  │     │  └─ 0
+      │  │  │     │     │  │  │  │  │     │     ├─ type: NumberLiteral
+      │  │  │     │     │  │  │  │  │     │     ├─ number: 0x0
+      │  │  │     │     │  │  │  │  │     │     └─ subdenomination
+      │  │  │     │     │  │  │  │  │     ├─ names
+      │  │  │     │     │  │  │  │  │     └─ identifiers
+      │  │  │     │     │  │  │  │  └─ right
+      │  │  │     │     │  │  │  │     ├─ type: TupleExpression
+      │  │  │     │     │  │  │  │     ├─ components
+      │  │  │     │     │  │  │  │     │  └─ 0
+      │  │  │     │     │  │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  │     │     ├─ operator: ||
+      │  │  │     │     │  │  │  │     │     ├─ left
+      │  │  │     │     │  │  │  │     │     │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  │     │     │  ├─ operator: ||
+      │  │  │     │     │  │  │  │     │     │  ├─ left
+      │  │  │     │     │  │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  │     │     │  │  ├─ operator: ==
+      │  │  │     │     │  │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  │     │     │  │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  │  │     │     │  │  │  ├─ base
+      │  │  │     │     │  │  │  │     │     │  │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │     │     │  │  │  │  └─ name: nftOwner
+      │  │  │     │     │  │  │  │     │     │  │  │  └─ index
+      │  │  │     │     │  │  │  │     │     │  │  │     ├─ type: Identifier
+      │  │  │     │     │  │  │  │     │     │  │  │     └─ name: _tokenId
+      │  │  │     │     │  │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │  │  │     │     │  │     ├─ type: MemberAccess
+      │  │  │     │     │  │  │  │     │     │  │     ├─ expression
+      │  │  │     │     │  │  │  │     │     │  │     │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │     │     │  │     │  └─ name: tx
+      │  │  │     │     │  │  │  │     │     │  │     └─ memberName: origin
+      │  │  │     │     │  │  │  │     │     │  └─ right
+      │  │  │     │     │  │  │  │     │     │     ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  │     │     │     ├─ operator: ==
+      │  │  │     │     │  │  │  │     │     │     ├─ left
+      │  │  │     │     │  │  │  │     │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  │  │  │     │     │     │  ├─ base
+      │  │  │     │     │  │  │  │     │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │     │     │     │  │  └─ name: approvedOf
+      │  │  │     │     │  │  │  │     │     │     │  └─ index
+      │  │  │     │     │  │  │  │     │     │     │     ├─ type: Identifier
+      │  │  │     │     │  │  │  │     │     │     │     └─ name: _tokenId
+      │  │  │     │     │  │  │  │     │     │     └─ right
+      │  │  │     │     │  │  │  │     │     │        ├─ type: MemberAccess
+      │  │  │     │     │  │  │  │     │     │        ├─ expression
+      │  │  │     │     │  │  │  │     │     │        │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │     │     │        │  └─ name: tx
+      │  │  │     │     │  │  │  │     │     │        └─ memberName: origin
+      │  │  │     │     │  │  │  │     │     └─ right
+      │  │  │     │     │  │  │  │     │        ├─ type: IndexAccess
+      │  │  │     │     │  │  │  │     │        ├─ base
+      │  │  │     │     │  │  │  │     │        │  ├─ type: IndexAccess
+      │  │  │     │     │  │  │  │     │        │  ├─ base
+      │  │  │     │     │  │  │  │     │        │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │     │        │  │  └─ name: approvedForAllNFTsOf
+      │  │  │     │     │  │  │  │     │        │  └─ index
+      │  │  │     │     │  │  │  │     │        │     ├─ type: Identifier
+      │  │  │     │     │  │  │  │     │        │     └─ name: _from
+      │  │  │     │     │  │  │  │     │        └─ index
+      │  │  │     │     │  │  │  │     │           ├─ type: MemberAccess
+      │  │  │     │     │  │  │  │     │           ├─ expression
+      │  │  │     │     │  │  │  │     │           │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │     │           │  └─ name: tx
+      │  │  │     │     │  │  │  │     │           └─ memberName: origin
+      │  │  │     │     │  │  │  │     └─ isArray: false
+      │  │  │     │     │  │  │  └─ right
+      │  │  │     │     │  │  │     ├─ type: BinaryOperation
+      │  │  │     │     │  │  │     ├─ operator: ==
+      │  │  │     │     │  │  │     ├─ left
+      │  │  │     │     │  │  │     │  ├─ type: IndexAccess
+      │  │  │     │     │  │  │     │  ├─ base
+      │  │  │     │     │  │  │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │     │  │  └─ name: nftOwner
+      │  │  │     │     │  │  │     │  └─ index
+      │  │  │     │     │  │  │     │     ├─ type: Identifier
+      │  │  │     │     │  │  │     │     └─ name: _tokenId
+      │  │  │     │     │  │  │     └─ right
+      │  │  │     │     │  │  │        ├─ type: Identifier
+      │  │  │     │     │  │  │        └─ name: _from
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: BinaryOperation
+      │  │  │     │     │  │     ├─ operator: !=
+      │  │  │     │     │  │     ├─ left
+      │  │  │     │     │  │     │  ├─ type: Identifier
+      │  │  │     │     │  │     │  └─ name: _to
+      │  │  │     │     │  │     └─ right
+      │  │  │     │     │  │        ├─ type: FunctionCall
+      │  │  │     │     │  │        ├─ expression
+      │  │  │     │     │  │        │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │        │  ├─ name: address
+      │  │  │     │     │  │        │  └─ stateMutability
+      │  │  │     │     │  │        ├─ arguments
+      │  │  │     │     │  │        │  └─ 0
+      │  │  │     │     │  │        │     ├─ type: NumberLiteral
+      │  │  │     │     │  │        │     ├─ number: 0x0
+      │  │  │     │     │  │        │     └─ subdenomination
+      │  │  │     │     │  │        ├─ names
+      │  │  │     │     │  │        └─ identifiers
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 03
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 03
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftOwner
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: _tokenId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: _to
+      │  │  │     ├─ 2
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: UnaryOperation
+      │  │  │     │     ├─ operator: --
+      │  │  │     │     ├─ subExpression
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftCountOfOwner
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: _from
+      │  │  │     │     └─ isPrefix: false
+      │  │  │     ├─ 3
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: UnaryOperation
+      │  │  │     │     ├─ operator: ++
+      │  │  │     │     ├─ subExpression
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftCountOfOwner
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: _to
+      │  │  │     │     └─ isPrefix: false
+      │  │  │     ├─ 4
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: uint
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: nftIndex
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: nftIndex
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: IndexAccess
+      │  │  │     │     ├─ base
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftIndexOfOwner
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: _from
+      │  │  │     │     └─ index
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: _tokenId
+      │  │  │     ├─ 5
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: uint
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: lastNftIndex
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: lastNftIndex
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: IndexAccess
+      │  │  │     │     ├─ base
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: lastNftIndexOfOwner
+      │  │  │     │     └─ index
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: _to
+      │  │  │     ├─ 6
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  ├─ base
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: nftListOfOwner
+      │  │  │     │     │  │  └─ index
+      │  │  │     │     │  │     ├─ type: Identifier
+      │  │  │     │     │  │     └─ name: _from
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: nftIndex
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: NumberLiteral
+      │  │  │     │        ├─ number: 0
+      │  │  │     │        └─ subdenomination
+      │  │  │     ├─ 7
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  ├─ base
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: nftListOfOwner
+      │  │  │     │     │  │  └─ index
+      │  │  │     │     │  │     ├─ type: Identifier
+      │  │  │     │     │  │     └─ name: _to
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: UnaryOperation
+      │  │  │     │     │     ├─ operator: ++
+      │  │  │     │     │     ├─ subExpression
+      │  │  │     │     │     │  ├─ type: Identifier
+      │  │  │     │     │     │  └─ name: lastNftIndex
+      │  │  │     │     │     └─ isPrefix: false
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: _tokenId
+      │  │  │     ├─ 8
+      │  │  │     │  ├─ type: EmitStatement
+      │  │  │     │  └─ eventCall
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: Transfer
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: _from
+      │  │  │     │     │  ├─ 1
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: _to
+      │  │  │     │     │  └─ 2
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: _tokenId
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 9
+      │  │  │     │  ├─ type: EmitStatement
+      │  │  │     │  └─ eventCall
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: Approval
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: MemberAccess
+      │  │  │     │     │  │  ├─ expression
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: msg
+      │  │  │     │     │  │  └─ memberName: sender
+      │  │  │     │     │  ├─ 1
+      │  │  │     │     │  │  ├─ type: FunctionCall
+      │  │  │     │     │  │  ├─ expression
+      │  │  │     │     │  │  │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │  │  ├─ name: address
+      │  │  │     │     │  │  │  └─ stateMutability
+      │  │  │     │     │  │  ├─ arguments
+      │  │  │     │     │  │  │  └─ 0
+      │  │  │     │     │  │  │     ├─ type: NumberLiteral
+      │  │  │     │     │  │  │     ├─ number: 0x0
+      │  │  │     │     │  │  │     └─ subdenomination
+      │  │  │     │     │  │  ├─ names
+      │  │  │     │     │  │  └─ identifiers
+      │  │  │     │     │  └─ 2
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: _tokenId
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     └─ 10
+      │  │  │        ├─ type: ExpressionStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: Identifier
+      │  │  │           └─ name: _
+      │  │  ├─ isVirtual: false
+      │  │  └─ override
+      │  ├─ 20
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: nameOfCollection
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: nameOfCollection
+      │  │  │  │  ├─ storageLocation: memory
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 1
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bytes
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: symbolOfCollection
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: symbolOfCollection
+      │  │  │     ├─ storageLocation: memory
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: collectionOwner
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: MemberAccess
+      │  │  │     │        ├─ expression
+      │  │  │     │        │  ├─ type: Identifier
+      │  │  │     │        │  └─ name: msg
+      │  │  │     │        └─ memberName: sender
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: collectionName
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: nameOfCollection
+      │  │  │     ├─ 2
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: collectionSymbol
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: symbolOfCollection
+      │  │  │     ├─ 3
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  ├─ 0
+      │  │  │     │  │  │  ├─ type: VariableDeclaration
+      │  │  │     │  │  │  ├─ name: erc721TokenReceiver
+      │  │  │     │  │  │  ├─ identifier
+      │  │  │     │  │  │  │  ├─ type: Identifier
+      │  │  │     │  │  │  │  └─ name: erc721TokenReceiver
+      │  │  │     │  │  │  ├─ typeName
+      │  │  │     │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  │  │  ├─ name: bytes4
+      │  │  │     │  │  │  │  └─ stateMutability
+      │  │  │     │  │  │  ├─ storageLocation
+      │  │  │     │  │  │  ├─ isStateVar: false
+      │  │  │     │  │  │  ├─ isIndexed: false
+      │  │  │     │  │  │  └─ expression
+      │  │  │     │  │  ├─ 1
+      │  │  │     │  │  │  ├─ type: VariableDeclaration
+      │  │  │     │  │  │  ├─ name: erc165
+      │  │  │     │  │  │  ├─ identifier
+      │  │  │     │  │  │  │  ├─ type: Identifier
+      │  │  │     │  │  │  │  └─ name: erc165
+      │  │  │     │  │  │  ├─ typeName
+      │  │  │     │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  │  │  ├─ name: bytes4
+      │  │  │     │  │  │  │  └─ stateMutability
+      │  │  │     │  │  │  ├─ storageLocation
+      │  │  │     │  │  │  ├─ isStateVar: false
+      │  │  │     │  │  │  ├─ isIndexed: false
+      │  │  │     │  │  │  └─ expression
+      │  │  │     │  │  ├─ 2
+      │  │  │     │  │  │  ├─ type: VariableDeclaration
+      │  │  │     │  │  │  ├─ name: erc721Id
+      │  │  │     │  │  │  ├─ identifier
+      │  │  │     │  │  │  │  ├─ type: Identifier
+      │  │  │     │  │  │  │  └─ name: erc721Id
+      │  │  │     │  │  │  ├─ typeName
+      │  │  │     │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  │  │  ├─ name: bytes4
+      │  │  │     │  │  │  │  └─ stateMutability
+      │  │  │     │  │  │  ├─ storageLocation
+      │  │  │     │  │  │  ├─ isStateVar: false
+      │  │  │     │  │  │  ├─ isIndexed: false
+      │  │  │     │  │  │  └─ expression
+      │  │  │     │  │  ├─ 3
+      │  │  │     │  │  │  ├─ type: VariableDeclaration
+      │  │  │     │  │  │  ├─ name: erc721MetadataId
+      │  │  │     │  │  │  ├─ identifier
+      │  │  │     │  │  │  │  ├─ type: Identifier
+      │  │  │     │  │  │  │  └─ name: erc721MetadataId
+      │  │  │     │  │  │  ├─ typeName
+      │  │  │     │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  │  │  ├─ name: bytes4
+      │  │  │     │  │  │  │  └─ stateMutability
+      │  │  │     │  │  │  ├─ storageLocation
+      │  │  │     │  │  │  ├─ isStateVar: false
+      │  │  │     │  │  │  ├─ isIndexed: false
+      │  │  │     │  │  │  └─ expression
+      │  │  │     │  │  └─ 4
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ name: erc721EnumerableId
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: erc721EnumerableId
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: bytes4
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: interfaceIdGenerator
+      │  │  │     │     ├─ arguments
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 4
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: supportedInterfaces
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: erc721TokenReceiver
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: BooleanLiteral
+      │  │  │     │        └─ value: true
+      │  │  │     ├─ 5
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: supportedInterfaces
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: erc165
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: BooleanLiteral
+      │  │  │     │        └─ value: true
+      │  │  │     ├─ 6
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: supportedInterfaces
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: erc721Id
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: BooleanLiteral
+      │  │  │     │        └─ value: true
+      │  │  │     ├─ 7
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: supportedInterfaces
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: erc721MetadataId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: BooleanLiteral
+      │  │  │     │        └─ value: true
+      │  │  │     ├─ 8
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: supportedInterfaces
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: erc721EnumerableId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: BooleanLiteral
+      │  │  │     │        └─ value: true
+      │  │  │     └─ 9
+      │  │  │        ├─ type: EmitStatement
+      │  │  │        └─ eventCall
+      │  │  │           ├─ type: FunctionCall
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: CollectionCreate
+      │  │  │           ├─ arguments
+      │  │  │           │  ├─ 0
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: collectionOwner
+      │  │  │           │  ├─ 1
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: collectionName
+      │  │  │           │  └─ 2
+      │  │  │           │     ├─ type: Identifier
+      │  │  │           │     └─ name: collectionSymbol
+      │  │  │           ├─ names
+      │  │  │           └─ identifiers
+      │  │  ├─ visibility: default
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: true
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability
+      │  ├─ 21
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: supportsInterface
+      │  │  ├─ parameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bytes4
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: interfaceID
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: interfaceID
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bool
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     └─ 0
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: IndexAccess
+      │  │  │           ├─ base
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: supportedInterfaces
+      │  │  │           └─ index
+      │  │  │              ├─ type: Identifier
+      │  │  │              └─ name: interfaceID
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 22
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: name
+      │  │  ├─ parameters
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: string
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation: memory
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     └─ 0
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: FunctionCall
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: ElementaryTypeName
+      │  │  │           │  ├─ name: string
+      │  │  │           │  └─ stateMutability
+      │  │  │           ├─ arguments
+      │  │  │           │  └─ 0
+      │  │  │           │     ├─ type: Identifier
+      │  │  │           │     └─ name: collectionName
+      │  │  │           ├─ names
+      │  │  │           └─ identifiers
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 23
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: symbol
+      │  │  ├─ parameters
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: string
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation: memory
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     └─ 0
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: FunctionCall
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: ElementaryTypeName
+      │  │  │           │  ├─ name: string
+      │  │  │           │  └─ stateMutability
+      │  │  │           ├─ arguments
+      │  │  │           │  └─ 0
+      │  │  │           │     ├─ type: Identifier
+      │  │  │           │     └─ name: collectionSymbol
+      │  │  │           ├─ names
+      │  │  │           └─ identifiers
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 24
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: mint
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: ownerAddress
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: ownerAddress
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 1
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: uint256
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: tokenId
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: tokenId
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 2
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bytes
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: metadataURI
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: metadataURI
+      │  │  │     ├─ storageLocation: calldata
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bool
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: !=
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: ownerAddress
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: FunctionCall
+      │  │  │     │     │  │     ├─ expression
+      │  │  │     │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │     │  ├─ name: address
+      │  │  │     │     │  │     │  └─ stateMutability
+      │  │  │     │     │  │     ├─ arguments
+      │  │  │     │     │  │     │  └─ 0
+      │  │  │     │     │  │     │     ├─ type: NumberLiteral
+      │  │  │     │     │  │     │     ├─ number: 0x0
+      │  │  │     │     │  │     │     └─ subdenomination
+      │  │  │     │     │  │     ├─ names
+      │  │  │     │     │  │     └─ identifiers
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 09
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 09
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: ==
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: collectionOwner
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: MemberAccess
+      │  │  │     │     │  │     ├─ expression
+      │  │  │     │     │  │     │  ├─ type: Identifier
+      │  │  │     │     │  │     │  └─ name: msg
+      │  │  │     │     │  │     └─ memberName: sender
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 07
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 07
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 2
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: uint
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: lastNftIndex
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: lastNftIndex
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: IndexAccess
+      │  │  │     │     ├─ base
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: lastNftIndexOfOwner
+      │  │  │     │     └─ index
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: ownerAddress
+      │  │  │     ├─ 3
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  ├─ base
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: nftListOfOwner
+      │  │  │     │     │  │  └─ index
+      │  │  │     │     │  │     ├─ type: Identifier
+      │  │  │     │     │  │     └─ name: ownerAddress
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: UnaryOperation
+      │  │  │     │     │     ├─ operator: ++
+      │  │  │     │     │     ├─ subExpression
+      │  │  │     │     │     │  ├─ type: Identifier
+      │  │  │     │     │     │  └─ name: lastNftIndex
+      │  │  │     │     │     └─ isPrefix: false
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: tokenId
+      │  │  │     ├─ 4
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  ├─ base
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: nftIndexOfOwner
+      │  │  │     │     │  │  └─ index
+      │  │  │     │     │  │     ├─ type: Identifier
+      │  │  │     │     │  │     └─ name: ownerAddress
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: tokenId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: lastNftIndex
+      │  │  │     ├─ 5
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftFromCollection
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: lastNftIndexOfCollection
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: tokenId
+      │  │  │     ├─ 6
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftIndexInCollection
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: tokenId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: lastNftIndexOfCollection
+      │  │  │     ├─ 7
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftOwner
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: tokenId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: ownerAddress
+      │  │  │     ├─ 8
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: uriOf
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: tokenId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: metadataURI
+      │  │  │     ├─ 9
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: UnaryOperation
+      │  │  │     │     ├─ operator: ++
+      │  │  │     │     ├─ subExpression
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftCountOfOwner
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: ownerAddress
+      │  │  │     │     └─ isPrefix: false
+      │  │  │     ├─ 10
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: UnaryOperation
+      │  │  │     │     ├─ operator: ++
+      │  │  │     │     ├─ subExpression
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: lastNftIndexOfOwner
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: ownerAddress
+      │  │  │     │     └─ isPrefix: false
+      │  │  │     ├─ 11
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: UnaryOperation
+      │  │  │     │     ├─ operator: ++
+      │  │  │     │     ├─ subExpression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: totalSupplyCounter
+      │  │  │     │     └─ isPrefix: false
+      │  │  │     ├─ 12
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: UnaryOperation
+      │  │  │     │     ├─ operator: ++
+      │  │  │     │     ├─ subExpression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: lastNftIndexOfCollection
+      │  │  │     │     └─ isPrefix: false
+      │  │  │     ├─ 13
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: uint
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: codeSize
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: codeSize
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     ├─ 14
+      │  │  │     │  ├─ type: EmitStatement
+      │  │  │     │  └─ eventCall
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: Transfer
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: FunctionCall
+      │  │  │     │     │  │  ├─ expression
+      │  │  │     │     │  │  │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │  │  ├─ name: address
+      │  │  │     │     │  │  │  └─ stateMutability
+      │  │  │     │     │  │  ├─ arguments
+      │  │  │     │     │  │  │  └─ 0
+      │  │  │     │     │  │  │     ├─ type: NumberLiteral
+      │  │  │     │     │  │  │     ├─ number: 0x0
+      │  │  │     │     │  │  │     └─ subdenomination
+      │  │  │     │     │  │  ├─ names
+      │  │  │     │     │  │  └─ identifiers
+      │  │  │     │     │  ├─ 1
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: ownerAddress
+      │  │  │     │     │  └─ 2
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: tokenId
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 15
+      │  │  │     │  ├─ type: InlineAssemblyStatement
+      │  │  │     │  ├─ language
+      │  │  │     │  ├─ flags
+      │  │  │     │  └─ body
+      │  │  │     │     ├─ type: AssemblyBlock
+      │  │  │     │     └─ operations
+      │  │  │     │        └─ 0
+      │  │  │     │           ├─ type: AssemblyAssignment
+      │  │  │     │           ├─ names
+      │  │  │     │           │  └─ 0
+      │  │  │     │           │     ├─ type: Identifier
+      │  │  │     │           │     └─ name: codeSize
+      │  │  │     │           └─ expression
+      │  │  │     │              ├─ type: AssemblyCall
+      │  │  │     │              ├─ functionName: extcodesize
+      │  │  │     │              └─ arguments
+      │  │  │     │                 └─ 0
+      │  │  │     │                    ├─ type: AssemblyCall
+      │  │  │     │                    ├─ functionName: ownerAddress
+      │  │  │     │                    └─ arguments
+      │  │  │     ├─ 16
+      │  │  │     │  ├─ type: IfStatement
+      │  │  │     │  ├─ condition
+      │  │  │     │  │  ├─ type: BinaryOperation
+      │  │  │     │  │  ├─ operator: >
+      │  │  │     │  │  ├─ left
+      │  │  │     │  │  │  ├─ type: Identifier
+      │  │  │     │  │  │  └─ name: codeSize
+      │  │  │     │  │  └─ right
+      │  │  │     │  │     ├─ type: NumberLiteral
+      │  │  │     │  │     ├─ number: 0
+      │  │  │     │  │     └─ subdenomination
+      │  │  │     │  ├─ trueBody
+      │  │  │     │  │  ├─ type: Block
+      │  │  │     │  │  └─ statements
+      │  │  │     │  │     ├─ 0
+      │  │  │     │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  │     │  └─ expression
+      │  │  │     │  │     │     ├─ type: BinaryOperation
+      │  │  │     │  │     │     ├─ operator: =
+      │  │  │     │  │     │     ├─ left
+      │  │  │     │  │     │     │  ├─ type: Identifier
+      │  │  │     │  │     │     │  └─ name: recipientContractAddress
+      │  │  │     │  │     │     └─ right
+      │  │  │     │  │     │        ├─ type: Identifier
+      │  │  │     │  │     │        └─ name: ownerAddress
+      │  │  │     │  │     ├─ 1
+      │  │  │     │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  │     │  ├─ variables
+      │  │  │     │  │     │  │  └─ 0
+      │  │  │     │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  │     │  ├─ name: bytes4
+      │  │  │     │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     │  │     ├─ name: functionSelector
+      │  │  │     │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  │     │  └─ name: functionSelector
+      │  │  │     │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     │  │     └─ expression
+      │  │  │     │  │     │  └─ initialValue
+      │  │  │     │  │     │     ├─ type: FunctionCall
+      │  │  │     │  │     │     ├─ expression
+      │  │  │     │  │     │     │  ├─ type: MemberAccess
+      │  │  │     │  │     │     │  ├─ expression
+      │  │  │     │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │  │     │     │  │  └─ name: this
+      │  │  │     │  │     │     │  └─ memberName: onERC721Received
+      │  │  │     │  │     │     ├─ arguments
+      │  │  │     │  │     │     │  ├─ 0
+      │  │  │     │  │     │     │  │  ├─ type: FunctionCall
+      │  │  │     │  │     │     │  │  ├─ expression
+      │  │  │     │  │     │     │  │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │     │  │  │  ├─ name: address
+      │  │  │     │  │     │     │  │  │  └─ stateMutability
+      │  │  │     │  │     │     │  │  ├─ arguments
+      │  │  │     │  │     │     │  │  │  └─ 0
+      │  │  │     │  │     │     │  │  │     ├─ type: NumberLiteral
+      │  │  │     │  │     │     │  │  │     ├─ number: 0x0
+      │  │  │     │  │     │     │  │  │     └─ subdenomination
+      │  │  │     │  │     │     │  │  ├─ names
+      │  │  │     │  │     │     │  │  └─ identifiers
+      │  │  │     │  │     │     │  ├─ 1
+      │  │  │     │  │     │     │  │  ├─ type: FunctionCall
+      │  │  │     │  │     │     │  │  ├─ expression
+      │  │  │     │  │     │     │  │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │     │  │  │  ├─ name: address
+      │  │  │     │  │     │     │  │  │  └─ stateMutability
+      │  │  │     │  │     │     │  │  ├─ arguments
+      │  │  │     │  │     │     │  │  │  └─ 0
+      │  │  │     │  │     │     │  │  │     ├─ type: NumberLiteral
+      │  │  │     │  │     │     │  │  │     ├─ number: 0x0
+      │  │  │     │  │     │     │  │  │     └─ subdenomination
+      │  │  │     │  │     │     │  │  ├─ names
+      │  │  │     │  │     │     │  │  └─ identifiers
+      │  │  │     │  │     │     │  ├─ 2
+      │  │  │     │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │  │     │     │  │  └─ name: tokenId
+      │  │  │     │  │     │     │  └─ 3
+      │  │  │     │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │  │     │     │     ├─ value: 
+      │  │  │     │  │     │     │     ├─ parts
+      │  │  │     │  │     │     │     │  └─ 0: 
+      │  │  │     │  │     │     │     └─ isUnicode
+      │  │  │     │  │     │     │        └─ 0: false
+      │  │  │     │  │     │     ├─ names
+      │  │  │     │  │     │     └─ identifiers
+      │  │  │     │  │     └─ 2
+      │  │  │     │  │        ├─ type: ExpressionStatement
+      │  │  │     │  │        └─ expression
+      │  │  │     │  │           ├─ type: FunctionCall
+      │  │  │     │  │           ├─ expression
+      │  │  │     │  │           │  ├─ type: Identifier
+      │  │  │     │  │           │  └─ name: require
+      │  │  │     │  │           ├─ arguments
+      │  │  │     │  │           │  ├─ 0
+      │  │  │     │  │           │  │  ├─ type: BinaryOperation
+      │  │  │     │  │           │  │  ├─ operator: ==
+      │  │  │     │  │           │  │  ├─ left
+      │  │  │     │  │           │  │  │  ├─ type: Identifier
+      │  │  │     │  │           │  │  │  └─ name: functionSelector
+      │  │  │     │  │           │  │  └─ right
+      │  │  │     │  │           │  │     ├─ type: FunctionCall
+      │  │  │     │  │           │  │     ├─ expression
+      │  │  │     │  │           │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │           │  │     │  ├─ name: bytes4
+      │  │  │     │  │           │  │     │  └─ stateMutability
+      │  │  │     │  │           │  │     ├─ arguments
+      │  │  │     │  │           │  │     │  └─ 0
+      │  │  │     │  │           │  │     │     ├─ type: FunctionCall
+      │  │  │     │  │           │  │     │     ├─ expression
+      │  │  │     │  │           │  │     │     │  ├─ type: Identifier
+      │  │  │     │  │           │  │     │     │  └─ name: keccak256
+      │  │  │     │  │           │  │     │     ├─ arguments
+      │  │  │     │  │           │  │     │     │  └─ 0
+      │  │  │     │  │           │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │  │           │  │     │     │     ├─ value: onERC721Received(address,address,uint256,bytes)
+      │  │  │     │  │           │  │     │     │     ├─ parts
+      │  │  │     │  │           │  │     │     │     │  └─ 0: onERC721Received(address,address,uint256,bytes)
+      │  │  │     │  │           │  │     │     │     └─ isUnicode
+      │  │  │     │  │           │  │     │     │        └─ 0: false
+      │  │  │     │  │           │  │     │     ├─ names
+      │  │  │     │  │           │  │     │     └─ identifiers
+      │  │  │     │  │           │  │     ├─ names
+      │  │  │     │  │           │  │     └─ identifiers
+      │  │  │     │  │           │  └─ 1
+      │  │  │     │  │           │     ├─ type: StringLiteral
+      │  │  │     │  │           │     ├─ value: 04
+      │  │  │     │  │           │     ├─ parts
+      │  │  │     │  │           │     │  └─ 0: 04
+      │  │  │     │  │           │     └─ isUnicode
+      │  │  │     │  │           │        └─ 0: false
+      │  │  │     │  │           ├─ names
+      │  │  │     │  │           └─ identifiers
+      │  │  │     │  └─ falseBody
+      │  │  │     └─ 17
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: BooleanLiteral
+      │  │  │           └─ value: true
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability
+      │  ├─ 25
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: burn
+      │  │  ├─ parameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: tokenId
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: tokenId
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bool
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: uint
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: nftIndex
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: nftIndex
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: IndexAccess
+      │  │  │     │     ├─ base
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftIndexOfOwner
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: MemberAccess
+      │  │  │     │     │     ├─ expression
+      │  │  │     │     │     │  ├─ type: Identifier
+      │  │  │     │     │     │  └─ name: msg
+      │  │  │     │     │     └─ memberName: sender
+      │  │  │     │     └─ index
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: tokenId
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  ├─ base
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: nftListOfOwner
+      │  │  │     │     │  │  └─ index
+      │  │  │     │     │  │     ├─ type: MemberAccess
+      │  │  │     │     │  │     ├─ expression
+      │  │  │     │     │  │     │  ├─ type: Identifier
+      │  │  │     │     │  │     │  └─ name: msg
+      │  │  │     │     │  │     └─ memberName: sender
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: nftIndex
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: NumberLiteral
+      │  │  │     │        ├─ number: 0
+      │  │  │     │        └─ subdenomination
+      │  │  │     ├─ 2
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftOwner
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: tokenId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: FunctionCall
+      │  │  │     │        ├─ expression
+      │  │  │     │        │  ├─ type: ElementaryTypeName
+      │  │  │     │        │  ├─ name: address
+      │  │  │     │        │  └─ stateMutability
+      │  │  │     │        ├─ arguments
+      │  │  │     │        │  └─ 0
+      │  │  │     │        │     ├─ type: NumberLiteral
+      │  │  │     │        │     ├─ number: 0x0
+      │  │  │     │        │     └─ subdenomination
+      │  │  │     │        ├─ names
+      │  │  │     │        └─ identifiers
+      │  │  │     ├─ 3
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: uriOf
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: tokenId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: StringLiteral
+      │  │  │     │        ├─ value: 
+      │  │  │     │        ├─ parts
+      │  │  │     │        │  └─ 0: 
+      │  │  │     │        └─ isUnicode
+      │  │  │     │           └─ 0: false
+      │  │  │     ├─ 4
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: approvedOf
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: tokenId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: FunctionCall
+      │  │  │     │        ├─ expression
+      │  │  │     │        │  ├─ type: ElementaryTypeName
+      │  │  │     │        │  ├─ name: address
+      │  │  │     │        │  └─ stateMutability
+      │  │  │     │        ├─ arguments
+      │  │  │     │        │  └─ 0
+      │  │  │     │        │     ├─ type: NumberLiteral
+      │  │  │     │        │     ├─ number: 0x0
+      │  │  │     │        │     └─ subdenomination
+      │  │  │     │        ├─ names
+      │  │  │     │        └─ identifiers
+      │  │  │     ├─ 5
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: UnaryOperation
+      │  │  │     │     ├─ operator: --
+      │  │  │     │     ├─ subExpression
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftCountOfOwner
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: MemberAccess
+      │  │  │     │     │     ├─ expression
+      │  │  │     │     │     │  ├─ type: Identifier
+      │  │  │     │     │     │  └─ name: msg
+      │  │  │     │     │     └─ memberName: sender
+      │  │  │     │     └─ isPrefix: false
+      │  │  │     ├─ 6
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftIndexInCollection
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: tokenId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: lastNftIndexOfCollection
+      │  │  │     ├─ 7
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: nftFromCollection
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: lastNftIndexOfCollection
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: NumberLiteral
+      │  │  │     │        ├─ number: 0
+      │  │  │     │        └─ subdenomination
+      │  │  │     ├─ 8
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: UnaryOperation
+      │  │  │     │     ├─ operator: --
+      │  │  │     │     ├─ subExpression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: totalSupplyCounter
+      │  │  │     │     └─ isPrefix: false
+      │  │  │     ├─ 9
+      │  │  │     │  ├─ type: EmitStatement
+      │  │  │     │  └─ eventCall
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: Transfer
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: MemberAccess
+      │  │  │     │     │  │  ├─ expression
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: msg
+      │  │  │     │     │  │  └─ memberName: sender
+      │  │  │     │     │  ├─ 1
+      │  │  │     │     │  │  ├─ type: FunctionCall
+      │  │  │     │     │  │  ├─ expression
+      │  │  │     │     │  │  │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │  │  ├─ name: address
+      │  │  │     │     │  │  │  └─ stateMutability
+      │  │  │     │     │  │  ├─ arguments
+      │  │  │     │     │  │  │  └─ 0
+      │  │  │     │     │  │  │     ├─ type: NumberLiteral
+      │  │  │     │     │  │  │     ├─ number: 0x0
+      │  │  │     │     │  │  │     └─ subdenomination
+      │  │  │     │     │  │  ├─ names
+      │  │  │     │     │  │  └─ identifiers
+      │  │  │     │     │  └─ 2
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: tokenId
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     └─ 10
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: BooleanLiteral
+      │  │  │           └─ value: true
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability
+      │  ├─ 26
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: totalSupply
+      │  │  ├─ parameters
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     └─ 0
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: Identifier
+      │  │  │           └─ name: totalSupplyCounter
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 27
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: tokenURI
+      │  │  ├─ parameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _tokenId
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _tokenId
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: string
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation: memory
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     └─ 0
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: FunctionCall
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: ElementaryTypeName
+      │  │  │           │  ├─ name: string
+      │  │  │           │  └─ stateMutability
+      │  │  │           ├─ arguments
+      │  │  │           │  └─ 0
+      │  │  │           │     ├─ type: IndexAccess
+      │  │  │           │     ├─ base
+      │  │  │           │     │  ├─ type: Identifier
+      │  │  │           │     │  └─ name: uriOf
+      │  │  │           │     └─ index
+      │  │  │           │        ├─ type: Identifier
+      │  │  │           │        └─ name: _tokenId
+      │  │  │           ├─ names
+      │  │  │           └─ identifiers
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 28
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: tokenByIndex
+      │  │  ├─ parameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _index
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _index
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: <=
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: _index
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: Identifier
+      │  │  │     │     │  │     └─ name: lastNftIndexOfCollection
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 06
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 06
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     └─ 1
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: IndexAccess
+      │  │  │           ├─ base
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: nftFromCollection
+      │  │  │           └─ index
+      │  │  │              ├─ type: Identifier
+      │  │  │              └─ name: _index
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 29
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: balanceOf
+      │  │  ├─ parameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: address
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _owner
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _owner
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: !=
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: _owner
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: FunctionCall
+      │  │  │     │     │  │     ├─ expression
+      │  │  │     │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │     │  ├─ name: address
+      │  │  │     │     │  │     │  └─ stateMutability
+      │  │  │     │     │  │     ├─ arguments
+      │  │  │     │     │  │     │  └─ 0
+      │  │  │     │     │  │     │     ├─ type: NumberLiteral
+      │  │  │     │     │  │     │     ├─ number: 0x0
+      │  │  │     │     │  │     │     └─ subdenomination
+      │  │  │     │     │  │     ├─ names
+      │  │  │     │     │  │     └─ identifiers
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 01
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 01
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     └─ 1
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: IndexAccess
+      │  │  │           ├─ base
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: nftCountOfOwner
+      │  │  │           └─ index
+      │  │  │              ├─ type: Identifier
+      │  │  │              └─ name: _owner
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 30
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: tokenOfOwnerByIndex
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _owner
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _owner
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 1
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _index
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _index
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: <=
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: _index
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: IndexAccess
+      │  │  │     │     │  │     ├─ base
+      │  │  │     │     │  │     │  ├─ type: Identifier
+      │  │  │     │     │  │     │  └─ name: nftCountOfOwner
+      │  │  │     │     │  │     └─ index
+      │  │  │     │     │  │        ├─ type: Identifier
+      │  │  │     │     │  │        └─ name: _owner
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 06
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 06
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     └─ 1
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: IndexAccess
+      │  │  │           ├─ base
+      │  │  │           │  ├─ type: IndexAccess
+      │  │  │           │  ├─ base
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: nftListOfOwner
+      │  │  │           │  └─ index
+      │  │  │           │     ├─ type: Identifier
+      │  │  │           │     └─ name: _owner
+      │  │  │           └─ index
+      │  │  │              ├─ type: Identifier
+      │  │  │              └─ name: _index
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 31
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: ownerOf
+      │  │  ├─ parameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _tokenId
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _tokenId
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: address
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: !=
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  │  ├─ base
+      │  │  │     │     │  │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  └─ name: nftOwner
+      │  │  │     │     │  │  │  └─ index
+      │  │  │     │     │  │  │     ├─ type: Identifier
+      │  │  │     │     │  │  │     └─ name: _tokenId
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: FunctionCall
+      │  │  │     │     │  │     ├─ expression
+      │  │  │     │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │     │  ├─ name: address
+      │  │  │     │     │  │     │  └─ stateMutability
+      │  │  │     │     │  │     ├─ arguments
+      │  │  │     │     │  │     │  └─ 0
+      │  │  │     │     │  │     │     ├─ type: NumberLiteral
+      │  │  │     │     │  │     │     ├─ number: 0x0
+      │  │  │     │     │  │     │     └─ subdenomination
+      │  │  │     │     │  │     ├─ names
+      │  │  │     │     │  │     └─ identifiers
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 02
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 02
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     └─ 1
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: TupleExpression
+      │  │  │           ├─ components
+      │  │  │           │  └─ 0
+      │  │  │           │     ├─ type: IndexAccess
+      │  │  │           │     ├─ base
+      │  │  │           │     │  ├─ type: Identifier
+      │  │  │           │     │  └─ name: nftOwner
+      │  │  │           │     └─ index
+      │  │  │           │        ├─ type: Identifier
+      │  │  │           │        └─ name: _tokenId
+      │  │  │           └─ isArray: false
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 32
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: collectionRename
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: newName
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: newName
+      │  │  │  │  ├─ storageLocation: calldata
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 1
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bytes
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: newSymbol
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: newSymbol
+      │  │  │     ├─ storageLocation: calldata
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: ==
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: collectionOwner
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: MemberAccess
+      │  │  │     │     │  │     ├─ expression
+      │  │  │     │     │  │     │  ├─ type: Identifier
+      │  │  │     │     │  │     │  └─ name: msg
+      │  │  │     │     │  │     └─ memberName: sender
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 08
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 08
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: EmitStatement
+      │  │  │     │  └─ eventCall
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: CollectionRename
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: collectionName
+      │  │  │     │     │  ├─ 1
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: newName
+      │  │  │     │     │  ├─ 2
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: collectionSymbol
+      │  │  │     │     │  └─ 3
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: newSymbol
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 2
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: collectionName
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: newName
+      │  │  │     └─ 3
+      │  │  │        ├─ type: ExpressionStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: BinaryOperation
+      │  │  │           ├─ operator: =
+      │  │  │           ├─ left
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: collectionSymbol
+      │  │  │           └─ right
+      │  │  │              ├─ type: Identifier
+      │  │  │              └─ name: newSymbol
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability
+      │  ├─ 33
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: safeTransferFrom
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _from
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _from
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 1
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _to
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _to
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 2
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: uint256
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _tokenId
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _tokenId
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 3
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bytes
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: data
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: data
+      │  │  │     ├─ storageLocation: calldata
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: uint
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: codeSize
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: codeSize
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: address
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: operator
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: operator
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: MemberAccess
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: msg
+      │  │  │     │     └─ memberName: sender
+      │  │  │     ├─ 2
+      │  │  │     │  ├─ type: InlineAssemblyStatement
+      │  │  │     │  ├─ language
+      │  │  │     │  ├─ flags
+      │  │  │     │  └─ body
+      │  │  │     │     ├─ type: AssemblyBlock
+      │  │  │     │     └─ operations
+      │  │  │     │        └─ 0
+      │  │  │     │           ├─ type: AssemblyAssignment
+      │  │  │     │           ├─ names
+      │  │  │     │           │  └─ 0
+      │  │  │     │           │     ├─ type: Identifier
+      │  │  │     │           │     └─ name: codeSize
+      │  │  │     │           └─ expression
+      │  │  │     │              ├─ type: AssemblyCall
+      │  │  │     │              ├─ functionName: extcodesize
+      │  │  │     │              └─ arguments
+      │  │  │     │                 └─ 0
+      │  │  │     │                    ├─ type: AssemblyCall
+      │  │  │     │                    ├─ functionName: _to
+      │  │  │     │                    └─ arguments
+      │  │  │     └─ 3
+      │  │  │        ├─ type: IfStatement
+      │  │  │        ├─ condition
+      │  │  │        │  ├─ type: BinaryOperation
+      │  │  │        │  ├─ operator: >
+      │  │  │        │  ├─ left
+      │  │  │        │  │  ├─ type: Identifier
+      │  │  │        │  │  └─ name: codeSize
+      │  │  │        │  └─ right
+      │  │  │        │     ├─ type: NumberLiteral
+      │  │  │        │     ├─ number: 0
+      │  │  │        │     └─ subdenomination
+      │  │  │        ├─ trueBody
+      │  │  │        │  ├─ type: Block
+      │  │  │        │  └─ statements
+      │  │  │        │     ├─ 0
+      │  │  │        │     │  ├─ type: ExpressionStatement
+      │  │  │        │     │  └─ expression
+      │  │  │        │     │     ├─ type: BinaryOperation
+      │  │  │        │     │     ├─ operator: =
+      │  │  │        │     │     ├─ left
+      │  │  │        │     │     │  ├─ type: Identifier
+      │  │  │        │     │     │  └─ name: recipientContractAddress
+      │  │  │        │     │     └─ right
+      │  │  │        │     │        ├─ type: Identifier
+      │  │  │        │     │        └─ name: _to
+      │  │  │        │     ├─ 1
+      │  │  │        │     │  ├─ type: VariableDeclarationStatement
+      │  │  │        │     │  ├─ variables
+      │  │  │        │     │  │  └─ 0
+      │  │  │        │     │  │     ├─ type: VariableDeclaration
+      │  │  │        │     │  │     ├─ typeName
+      │  │  │        │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │        │     │  │     │  ├─ name: bytes4
+      │  │  │        │     │  │     │  └─ stateMutability
+      │  │  │        │     │  │     ├─ name: functionSelector
+      │  │  │        │     │  │     ├─ identifier
+      │  │  │        │     │  │     │  ├─ type: Identifier
+      │  │  │        │     │  │     │  └─ name: functionSelector
+      │  │  │        │     │  │     ├─ storageLocation
+      │  │  │        │     │  │     ├─ isStateVar: false
+      │  │  │        │     │  │     ├─ isIndexed: false
+      │  │  │        │     │  │     └─ expression
+      │  │  │        │     │  └─ initialValue
+      │  │  │        │     │     ├─ type: FunctionCall
+      │  │  │        │     │     ├─ expression
+      │  │  │        │     │     │  ├─ type: MemberAccess
+      │  │  │        │     │     │  ├─ expression
+      │  │  │        │     │     │  │  ├─ type: Identifier
+      │  │  │        │     │     │  │  └─ name: this
+      │  │  │        │     │     │  └─ memberName: onERC721Received
+      │  │  │        │     │     ├─ arguments
+      │  │  │        │     │     │  ├─ 0
+      │  │  │        │     │     │  │  ├─ type: Identifier
+      │  │  │        │     │     │  │  └─ name: operator
+      │  │  │        │     │     │  ├─ 1
+      │  │  │        │     │     │  │  ├─ type: Identifier
+      │  │  │        │     │     │  │  └─ name: _from
+      │  │  │        │     │     │  ├─ 2
+      │  │  │        │     │     │  │  ├─ type: Identifier
+      │  │  │        │     │     │  │  └─ name: _tokenId
+      │  │  │        │     │     │  └─ 3
+      │  │  │        │     │     │     ├─ type: Identifier
+      │  │  │        │     │     │     └─ name: data
+      │  │  │        │     │     ├─ names
+      │  │  │        │     │     └─ identifiers
+      │  │  │        │     └─ 2
+      │  │  │        │        ├─ type: ExpressionStatement
+      │  │  │        │        └─ expression
+      │  │  │        │           ├─ type: FunctionCall
+      │  │  │        │           ├─ expression
+      │  │  │        │           │  ├─ type: Identifier
+      │  │  │        │           │  └─ name: require
+      │  │  │        │           ├─ arguments
+      │  │  │        │           │  ├─ 0
+      │  │  │        │           │  │  ├─ type: BinaryOperation
+      │  │  │        │           │  │  ├─ operator: ==
+      │  │  │        │           │  │  ├─ left
+      │  │  │        │           │  │  │  ├─ type: Identifier
+      │  │  │        │           │  │  │  └─ name: functionSelector
+      │  │  │        │           │  │  └─ right
+      │  │  │        │           │  │     ├─ type: FunctionCall
+      │  │  │        │           │  │     ├─ expression
+      │  │  │        │           │  │     │  ├─ type: ElementaryTypeName
+      │  │  │        │           │  │     │  ├─ name: bytes4
+      │  │  │        │           │  │     │  └─ stateMutability
+      │  │  │        │           │  │     ├─ arguments
+      │  │  │        │           │  │     │  └─ 0
+      │  │  │        │           │  │     │     ├─ type: FunctionCall
+      │  │  │        │           │  │     │     ├─ expression
+      │  │  │        │           │  │     │     │  ├─ type: Identifier
+      │  │  │        │           │  │     │     │  └─ name: keccak256
+      │  │  │        │           │  │     │     ├─ arguments
+      │  │  │        │           │  │     │     │  └─ 0
+      │  │  │        │           │  │     │     │     ├─ type: StringLiteral
+      │  │  │        │           │  │     │     │     ├─ value: onERC721Received(address,address,uint256,bytes)
+      │  │  │        │           │  │     │     │     ├─ parts
+      │  │  │        │           │  │     │     │     │  └─ 0: onERC721Received(address,address,uint256,bytes)
+      │  │  │        │           │  │     │     │     └─ isUnicode
+      │  │  │        │           │  │     │     │        └─ 0: false
+      │  │  │        │           │  │     │     ├─ names
+      │  │  │        │           │  │     │     └─ identifiers
+      │  │  │        │           │  │     ├─ names
+      │  │  │        │           │  │     └─ identifiers
+      │  │  │        │           │  └─ 1
+      │  │  │        │           │     ├─ type: StringLiteral
+      │  │  │        │           │     ├─ value: 04
+      │  │  │        │           │     ├─ parts
+      │  │  │        │           │     │  └─ 0: 04
+      │  │  │        │           │     └─ isUnicode
+      │  │  │        │           │        └─ 0: false
+      │  │  │        │           ├─ names
+      │  │  │        │           └─ identifiers
+      │  │  │        └─ falseBody
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  │  └─ 0
+      │  │  │     ├─ type: ModifierInvocation
+      │  │  │     ├─ name: justTransfer
+      │  │  │     └─ arguments
+      │  │  │        ├─ 0
+      │  │  │        │  ├─ type: Identifier
+      │  │  │        │  └─ name: _from
+      │  │  │        ├─ 1
+      │  │  │        │  ├─ type: Identifier
+      │  │  │        │  └─ name: _to
+      │  │  │        └─ 2
+      │  │  │           ├─ type: Identifier
+      │  │  │           └─ name: _tokenId
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: payable
+      │  ├─ 34
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: safeTransferFrom
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _from
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _from
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 1
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _to
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _to
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 2
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _tokenId
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _tokenId
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     └─ 0
+      │  │  │        ├─ type: ExpressionStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: FunctionCall
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: MemberAccess
+      │  │  │           │  ├─ expression
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: this
+      │  │  │           │  └─ memberName: safeTransferFrom
+      │  │  │           ├─ arguments
+      │  │  │           │  ├─ 0
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: _from
+      │  │  │           │  ├─ 1
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: _to
+      │  │  │           │  ├─ 2
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: _tokenId
+      │  │  │           │  └─ 3
+      │  │  │           │     ├─ type: StringLiteral
+      │  │  │           │     ├─ value: 
+      │  │  │           │     ├─ parts
+      │  │  │           │     │  └─ 0: 
+      │  │  │           │     └─ isUnicode
+      │  │  │           │        └─ 0: false
+      │  │  │           ├─ names
+      │  │  │           └─ identifiers
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: payable
+      │  ├─ 35
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: transferFrom
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _from
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _from
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 1
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _to
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _to
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 2
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _tokenId
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _tokenId
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: EmitStatement
+      │  │  │     │  └─ eventCall
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: Transfer
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: _from
+      │  │  │     │     │  ├─ 1
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: _to
+      │  │  │     │     │  └─ 2
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: _tokenId
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     └─ 1
+      │  │  │        ├─ type: EmitStatement
+      │  │  │        └─ eventCall
+      │  │  │           ├─ type: FunctionCall
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: Approval
+      │  │  │           ├─ arguments
+      │  │  │           │  ├─ 0
+      │  │  │           │  │  ├─ type: MemberAccess
+      │  │  │           │  │  ├─ expression
+      │  │  │           │  │  │  ├─ type: Identifier
+      │  │  │           │  │  │  └─ name: msg
+      │  │  │           │  │  └─ memberName: sender
+      │  │  │           │  ├─ 1
+      │  │  │           │  │  ├─ type: FunctionCall
+      │  │  │           │  │  ├─ expression
+      │  │  │           │  │  │  ├─ type: ElementaryTypeName
+      │  │  │           │  │  │  ├─ name: address
+      │  │  │           │  │  │  └─ stateMutability
+      │  │  │           │  │  ├─ arguments
+      │  │  │           │  │  │  └─ 0
+      │  │  │           │  │  │     ├─ type: NumberLiteral
+      │  │  │           │  │  │     ├─ number: 0x0
+      │  │  │           │  │  │     └─ subdenomination
+      │  │  │           │  │  ├─ names
+      │  │  │           │  │  └─ identifiers
+      │  │  │           │  └─ 2
+      │  │  │           │     ├─ type: Identifier
+      │  │  │           │     └─ name: _tokenId
+      │  │  │           ├─ names
+      │  │  │           └─ identifiers
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  │  └─ 0
+      │  │  │     ├─ type: ModifierInvocation
+      │  │  │     ├─ name: justTransfer
+      │  │  │     └─ arguments
+      │  │  │        ├─ 0
+      │  │  │        │  ├─ type: Identifier
+      │  │  │        │  └─ name: _from
+      │  │  │        ├─ 1
+      │  │  │        │  ├─ type: Identifier
+      │  │  │        │  └─ name: _to
+      │  │  │        └─ 2
+      │  │  │           ├─ type: Identifier
+      │  │  │           └─ name: _tokenId
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: payable
+      │  ├─ 36
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: approve
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _approved
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _approved
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 1
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _tokenId
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _tokenId
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: ==
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  │  ├─ base
+      │  │  │     │     │  │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  └─ name: nftOwner
+      │  │  │     │     │  │  │  └─ index
+      │  │  │     │     │  │  │     ├─ type: Identifier
+      │  │  │     │     │  │  │     └─ name: _tokenId
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: MemberAccess
+      │  │  │     │     │  │     ├─ expression
+      │  │  │     │     │  │     │  ├─ type: Identifier
+      │  │  │     │     │  │     │  └─ name: msg
+      │  │  │     │     │  │     └─ memberName: sender
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 05
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 05
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: approvedOf
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: _tokenId
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: _approved
+      │  │  │     └─ 2
+      │  │  │        ├─ type: EmitStatement
+      │  │  │        └─ eventCall
+      │  │  │           ├─ type: FunctionCall
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: Approval
+      │  │  │           ├─ arguments
+      │  │  │           │  ├─ 0
+      │  │  │           │  │  ├─ type: MemberAccess
+      │  │  │           │  │  ├─ expression
+      │  │  │           │  │  │  ├─ type: Identifier
+      │  │  │           │  │  │  └─ name: msg
+      │  │  │           │  │  └─ memberName: sender
+      │  │  │           │  ├─ 1
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: _approved
+      │  │  │           │  └─ 2
+      │  │  │           │     ├─ type: Identifier
+      │  │  │           │     └─ name: _tokenId
+      │  │  │           ├─ names
+      │  │  │           └─ identifiers
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: payable
+      │  ├─ 37
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: setApprovalForAll
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _operator
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _operator
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 1
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bool
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _approved
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _approved
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  ├─ base
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: approvedForAllNFTsOf
+      │  │  │     │     │  │  └─ index
+      │  │  │     │     │  │     ├─ type: MemberAccess
+      │  │  │     │     │  │     ├─ expression
+      │  │  │     │     │  │     │  ├─ type: Identifier
+      │  │  │     │     │  │     │  └─ name: msg
+      │  │  │     │     │  │     └─ memberName: sender
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: _operator
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: _approved
+      │  │  │     └─ 1
+      │  │  │        ├─ type: EmitStatement
+      │  │  │        └─ eventCall
+      │  │  │           ├─ type: FunctionCall
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: ApprovalForAll
+      │  │  │           ├─ arguments
+      │  │  │           │  ├─ 0
+      │  │  │           │  │  ├─ type: MemberAccess
+      │  │  │           │  │  ├─ expression
+      │  │  │           │  │  │  ├─ type: Identifier
+      │  │  │           │  │  │  └─ name: msg
+      │  │  │           │  │  └─ memberName: sender
+      │  │  │           │  ├─ 1
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: _operator
+      │  │  │           │  └─ 2
+      │  │  │           │     ├─ type: Identifier
+      │  │  │           │     └─ name: _approved
+      │  │  │           ├─ names
+      │  │  │           └─ identifiers
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability
+      │  ├─ 38
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: getApproved
+      │  │  ├─ parameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint256
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _tokenId
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _tokenId
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: address
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     └─ 0
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: IndexAccess
+      │  │  │           ├─ base
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: approvedOf
+      │  │  │           └─ index
+      │  │  │              ├─ type: Identifier
+      │  │  │              └─ name: _tokenId
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 39
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: isApprovedForAll
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: address
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: _owner
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: _owner
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 1
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: address
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: _operator
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: _operator
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bool
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     └─ 0
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: IndexAccess
+      │  │  │           ├─ base
+      │  │  │           │  ├─ type: IndexAccess
+      │  │  │           │  ├─ base
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: approvedForAllNFTsOf
+      │  │  │           │  └─ index
+      │  │  │           │     ├─ type: Identifier
+      │  │  │           │     └─ name: _owner
+      │  │  │           └─ index
+      │  │  │              ├─ type: Identifier
+      │  │  │              └─ name: _operator
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 40
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: interfaceIdGenerator
+      │  │  ├─ parameters
+      │  │  ├─ returnParameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes4
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name
+      │  │  │  │  ├─ identifier
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 1
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes4
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name
+      │  │  │  │  ├─ identifier
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 2
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes4
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name
+      │  │  │  │  ├─ identifier
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 3
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes4
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name
+      │  │  │  │  ├─ identifier
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 4
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bytes4
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: bytes4
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: erc721TokenReceiver
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: erc721TokenReceiver
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: MemberAccess
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: MemberAccess
+      │  │  │     │     │  ├─ expression
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: this
+      │  │  │     │     │  └─ memberName: onERC721Received
+      │  │  │     │     └─ memberName: selector
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: bytes4
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: erc165
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: erc165
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: MemberAccess
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: MemberAccess
+      │  │  │     │     │  ├─ expression
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: this
+      │  │  │     │     │  └─ memberName: supportsInterface
+      │  │  │     │     └─ memberName: selector
+      │  │  │     ├─ 2
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: bytes4
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: erc721Id
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: erc721Id
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: ^
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: BinaryOperation
+      │  │  │     │     │  ├─ operator: ^
+      │  │  │     │     │  ├─ left
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: ^
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  ├─ operator: ^
+      │  │  │     │     │  │  │  ├─ left
+      │  │  │     │     │  │  │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  │  ├─ operator: ^
+      │  │  │     │     │  │  │  │  ├─ left
+      │  │  │     │     │  │  │  │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  │  │  ├─ operator: ^
+      │  │  │     │     │  │  │  │  │  ├─ left
+      │  │  │     │     │  │  │  │  │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  │  │  │  ├─ operator: ^
+      │  │  │     │     │  │  │  │  │  │  ├─ left
+      │  │  │     │     │  │  │  │  │  │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  │  │  │  │  ├─ operator: ^
+      │  │  │     │     │  │  │  │  │  │  │  ├─ left
+      │  │  │     │     │  │  │  │  │  │  │  │  ├─ type: FunctionCall
+      │  │  │     │     │  │  │  │  │  │  │  │  ├─ expression
+      │  │  │     │     │  │  │  │  │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │  │  │  │  │  │  │  │  ├─ name: bytes4
+      │  │  │     │     │  │  │  │  │  │  │  │  │  └─ stateMutability
+      │  │  │     │     │  │  │  │  │  │  │  │  ├─ arguments
+      │  │  │     │     │  │  │  │  │  │  │  │  │  └─ 0
+      │  │  │     │     │  │  │  │  │  │  │  │  │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │  │  │  │  │  │  │     ├─ expression
+      │  │  │     │     │  │  │  │  │  │  │  │  │     │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  │  │  │  │  │     │  └─ name: keccak256
+      │  │  │     │     │  │  │  │  │  │  │  │  │     ├─ arguments
+      │  │  │     │     │  │  │  │  │  │  │  │  │     │  └─ 0
+      │  │  │     │     │  │  │  │  │  │  │  │  │     │     ├─ type: StringLiteral
+      │  │  │     │     │  │  │  │  │  │  │  │  │     │     ├─ value: balanceOf(address)
+      │  │  │     │     │  │  │  │  │  │  │  │  │     │     ├─ parts
+      │  │  │     │     │  │  │  │  │  │  │  │  │     │     │  └─ 0: balanceOf(address)
+      │  │  │     │     │  │  │  │  │  │  │  │  │     │     └─ isUnicode
+      │  │  │     │     │  │  │  │  │  │  │  │  │     │        └─ 0: false
+      │  │  │     │     │  │  │  │  │  │  │  │  │     ├─ names
+      │  │  │     │     │  │  │  │  │  │  │  │  │     └─ identifiers
+      │  │  │     │     │  │  │  │  │  │  │  │  ├─ names
+      │  │  │     │     │  │  │  │  │  │  │  │  └─ identifiers
+      │  │  │     │     │  │  │  │  │  │  │  └─ right
+      │  │  │     │     │  │  │  │  │  │  │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │  │  │  │  │     ├─ expression
+      │  │  │     │     │  │  │  │  │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │  │  │  │  │  │     │  ├─ name: bytes4
+      │  │  │     │     │  │  │  │  │  │  │     │  └─ stateMutability
+      │  │  │     │     │  │  │  │  │  │  │     ├─ arguments
+      │  │  │     │     │  │  │  │  │  │  │     │  └─ 0
+      │  │  │     │     │  │  │  │  │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │  │  │  │  │     │     ├─ expression
+      │  │  │     │     │  │  │  │  │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  │  │  │     │     │  └─ name: keccak256
+      │  │  │     │     │  │  │  │  │  │  │     │     ├─ arguments
+      │  │  │     │     │  │  │  │  │  │  │     │     │  └─ 0
+      │  │  │     │     │  │  │  │  │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │  │  │  │  │  │  │     │     │     ├─ value: ownerOf(uint256)
+      │  │  │     │     │  │  │  │  │  │  │     │     │     ├─ parts
+      │  │  │     │     │  │  │  │  │  │  │     │     │     │  └─ 0: ownerOf(uint256)
+      │  │  │     │     │  │  │  │  │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │  │  │  │  │  │  │     │     │        └─ 0: false
+      │  │  │     │     │  │  │  │  │  │  │     │     ├─ names
+      │  │  │     │     │  │  │  │  │  │  │     │     └─ identifiers
+      │  │  │     │     │  │  │  │  │  │  │     ├─ names
+      │  │  │     │     │  │  │  │  │  │  │     └─ identifiers
+      │  │  │     │     │  │  │  │  │  │  └─ right
+      │  │  │     │     │  │  │  │  │  │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │  │  │  │     ├─ expression
+      │  │  │     │     │  │  │  │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │  │  │  │  │     │  ├─ name: bytes4
+      │  │  │     │     │  │  │  │  │  │     │  └─ stateMutability
+      │  │  │     │     │  │  │  │  │  │     ├─ arguments
+      │  │  │     │     │  │  │  │  │  │     │  └─ 0
+      │  │  │     │     │  │  │  │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │  │  │  │     │     ├─ expression
+      │  │  │     │     │  │  │  │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  │  │     │     │  └─ name: keccak256
+      │  │  │     │     │  │  │  │  │  │     │     ├─ arguments
+      │  │  │     │     │  │  │  │  │  │     │     │  └─ 0
+      │  │  │     │     │  │  │  │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │  │  │  │  │  │     │     │     ├─ value: safeTransferFrom(address,address,uint256,bytes)
+      │  │  │     │     │  │  │  │  │  │     │     │     ├─ parts
+      │  │  │     │     │  │  │  │  │  │     │     │     │  └─ 0: safeTransferFrom(address,address,uint256,bytes)
+      │  │  │     │     │  │  │  │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │  │  │  │  │  │     │     │        └─ 0: false
+      │  │  │     │     │  │  │  │  │  │     │     ├─ names
+      │  │  │     │     │  │  │  │  │  │     │     └─ identifiers
+      │  │  │     │     │  │  │  │  │  │     ├─ names
+      │  │  │     │     │  │  │  │  │  │     └─ identifiers
+      │  │  │     │     │  │  │  │  │  └─ right
+      │  │  │     │     │  │  │  │  │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │  │  │     ├─ expression
+      │  │  │     │     │  │  │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │  │  │  │     │  ├─ name: bytes4
+      │  │  │     │     │  │  │  │  │     │  └─ stateMutability
+      │  │  │     │     │  │  │  │  │     ├─ arguments
+      │  │  │     │     │  │  │  │  │     │  └─ 0
+      │  │  │     │     │  │  │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │  │  │     │     ├─ expression
+      │  │  │     │     │  │  │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  │     │     │  └─ name: keccak256
+      │  │  │     │     │  │  │  │  │     │     ├─ arguments
+      │  │  │     │     │  │  │  │  │     │     │  └─ 0
+      │  │  │     │     │  │  │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │  │  │  │  │     │     │     ├─ value: safeTransferFrom(address,address,uint256)
+      │  │  │     │     │  │  │  │  │     │     │     ├─ parts
+      │  │  │     │     │  │  │  │  │     │     │     │  └─ 0: safeTransferFrom(address,address,uint256)
+      │  │  │     │     │  │  │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │  │  │  │  │     │     │        └─ 0: false
+      │  │  │     │     │  │  │  │  │     │     ├─ names
+      │  │  │     │     │  │  │  │  │     │     └─ identifiers
+      │  │  │     │     │  │  │  │  │     ├─ names
+      │  │  │     │     │  │  │  │  │     └─ identifiers
+      │  │  │     │     │  │  │  │  └─ right
+      │  │  │     │     │  │  │  │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │  │     ├─ expression
+      │  │  │     │     │  │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │  │  │     │  ├─ name: bytes4
+      │  │  │     │     │  │  │  │     │  └─ stateMutability
+      │  │  │     │     │  │  │  │     ├─ arguments
+      │  │  │     │     │  │  │  │     │  └─ 0
+      │  │  │     │     │  │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │  │     │     ├─ expression
+      │  │  │     │     │  │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │     │     │  └─ name: keccak256
+      │  │  │     │     │  │  │  │     │     ├─ arguments
+      │  │  │     │     │  │  │  │     │     │  └─ 0
+      │  │  │     │     │  │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │  │  │  │     │     │     ├─ value: transferFrom(address,address,uint256)
+      │  │  │     │     │  │  │  │     │     │     ├─ parts
+      │  │  │     │     │  │  │  │     │     │     │  └─ 0: transferFrom(address,address,uint256)
+      │  │  │     │     │  │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │  │  │  │     │     │        └─ 0: false
+      │  │  │     │     │  │  │  │     │     ├─ names
+      │  │  │     │     │  │  │  │     │     └─ identifiers
+      │  │  │     │     │  │  │  │     ├─ names
+      │  │  │     │     │  │  │  │     └─ identifiers
+      │  │  │     │     │  │  │  └─ right
+      │  │  │     │     │  │  │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │     ├─ expression
+      │  │  │     │     │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │  │     │  ├─ name: bytes4
+      │  │  │     │     │  │  │     │  └─ stateMutability
+      │  │  │     │     │  │  │     ├─ arguments
+      │  │  │     │     │  │  │     │  └─ 0
+      │  │  │     │     │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     │  │  │     │     ├─ expression
+      │  │  │     │     │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  │  │     │     │  └─ name: keccak256
+      │  │  │     │     │  │  │     │     ├─ arguments
+      │  │  │     │     │  │  │     │     │  └─ 0
+      │  │  │     │     │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │  │  │     │     │     ├─ value: approve(address,uint256)
+      │  │  │     │     │  │  │     │     │     ├─ parts
+      │  │  │     │     │  │  │     │     │     │  └─ 0: approve(address,uint256)
+      │  │  │     │     │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │  │  │     │     │        └─ 0: false
+      │  │  │     │     │  │  │     │     ├─ names
+      │  │  │     │     │  │  │     │     └─ identifiers
+      │  │  │     │     │  │  │     ├─ names
+      │  │  │     │     │  │  │     └─ identifiers
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: FunctionCall
+      │  │  │     │     │  │     ├─ expression
+      │  │  │     │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │  │     │  ├─ name: bytes4
+      │  │  │     │     │  │     │  └─ stateMutability
+      │  │  │     │     │  │     ├─ arguments
+      │  │  │     │     │  │     │  └─ 0
+      │  │  │     │     │  │     │     ├─ type: FunctionCall
+      │  │  │     │     │  │     │     ├─ expression
+      │  │  │     │     │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  │     │     │  └─ name: keccak256
+      │  │  │     │     │  │     │     ├─ arguments
+      │  │  │     │     │  │     │     │  └─ 0
+      │  │  │     │     │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │  │     │     │     ├─ value: setApprovalForAll(address,bool)
+      │  │  │     │     │  │     │     │     ├─ parts
+      │  │  │     │     │  │     │     │     │  └─ 0: setApprovalForAll(address,bool)
+      │  │  │     │     │  │     │     │     └─ isUnicode
+      │  │  │     │     │  │     │     │        └─ 0: false
+      │  │  │     │     │  │     │     ├─ names
+      │  │  │     │     │  │     │     └─ identifiers
+      │  │  │     │     │  │     ├─ names
+      │  │  │     │     │  │     └─ identifiers
+      │  │  │     │     │  └─ right
+      │  │  │     │     │     ├─ type: FunctionCall
+      │  │  │     │     │     ├─ expression
+      │  │  │     │     │     │  ├─ type: ElementaryTypeName
+      │  │  │     │     │     │  ├─ name: bytes4
+      │  │  │     │     │     │  └─ stateMutability
+      │  │  │     │     │     ├─ arguments
+      │  │  │     │     │     │  └─ 0
+      │  │  │     │     │     │     ├─ type: FunctionCall
+      │  │  │     │     │     │     ├─ expression
+      │  │  │     │     │     │     │  ├─ type: Identifier
+      │  │  │     │     │     │     │  └─ name: keccak256
+      │  │  │     │     │     │     ├─ arguments
+      │  │  │     │     │     │     │  └─ 0
+      │  │  │     │     │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     │     │     ├─ value: getApproved(uint256)
+      │  │  │     │     │     │     │     ├─ parts
+      │  │  │     │     │     │     │     │  └─ 0: getApproved(uint256)
+      │  │  │     │     │     │     │     └─ isUnicode
+      │  │  │     │     │     │     │        └─ 0: false
+      │  │  │     │     │     │     ├─ names
+      │  │  │     │     │     │     └─ identifiers
+      │  │  │     │     │     ├─ names
+      │  │  │     │     │     └─ identifiers
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: FunctionCall
+      │  │  │     │        ├─ expression
+      │  │  │     │        │  ├─ type: ElementaryTypeName
+      │  │  │     │        │  ├─ name: bytes4
+      │  │  │     │        │  └─ stateMutability
+      │  │  │     │        ├─ arguments
+      │  │  │     │        │  └─ 0
+      │  │  │     │        │     ├─ type: FunctionCall
+      │  │  │     │        │     ├─ expression
+      │  │  │     │        │     │  ├─ type: Identifier
+      │  │  │     │        │     │  └─ name: keccak256
+      │  │  │     │        │     ├─ arguments
+      │  │  │     │        │     │  └─ 0
+      │  │  │     │        │     │     ├─ type: StringLiteral
+      │  │  │     │        │     │     ├─ value: isApprovedForAll(address,address)
+      │  │  │     │        │     │     ├─ parts
+      │  │  │     │        │     │     │  └─ 0: isApprovedForAll(address,address)
+      │  │  │     │        │     │     └─ isUnicode
+      │  │  │     │        │     │        └─ 0: false
+      │  │  │     │        │     ├─ names
+      │  │  │     │        │     └─ identifiers
+      │  │  │     │        ├─ names
+      │  │  │     │        └─ identifiers
+      │  │  │     ├─ 3
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: bytes4
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: erc721MetadataId
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: erc721MetadataId
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: ^
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: BinaryOperation
+      │  │  │     │     │  ├─ operator: ^
+      │  │  │     │     │  ├─ left
+      │  │  │     │     │  │  ├─ type: MemberAccess
+      │  │  │     │     │  │  ├─ expression
+      │  │  │     │     │  │  │  ├─ type: MemberAccess
+      │  │  │     │     │  │  │  ├─ expression
+      │  │  │     │     │  │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  └─ name: this
+      │  │  │     │     │  │  │  └─ memberName: name
+      │  │  │     │     │  │  └─ memberName: selector
+      │  │  │     │     │  └─ right
+      │  │  │     │     │     ├─ type: MemberAccess
+      │  │  │     │     │     ├─ expression
+      │  │  │     │     │     │  ├─ type: MemberAccess
+      │  │  │     │     │     │  ├─ expression
+      │  │  │     │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │     │  │  └─ name: this
+      │  │  │     │     │     │  └─ memberName: symbol
+      │  │  │     │     │     └─ memberName: selector
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: MemberAccess
+      │  │  │     │        ├─ expression
+      │  │  │     │        │  ├─ type: MemberAccess
+      │  │  │     │        │  ├─ expression
+      │  │  │     │        │  │  ├─ type: Identifier
+      │  │  │     │        │  │  └─ name: this
+      │  │  │     │        │  └─ memberName: tokenURI
+      │  │  │     │        └─ memberName: selector
+      │  │  │     ├─ 4
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: bytes4
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: erc721EnumerableId
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: erc721EnumerableId
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: ^
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: BinaryOperation
+      │  │  │     │     │  ├─ operator: ^
+      │  │  │     │     │  ├─ left
+      │  │  │     │     │  │  ├─ type: MemberAccess
+      │  │  │     │     │  │  ├─ expression
+      │  │  │     │     │  │  │  ├─ type: MemberAccess
+      │  │  │     │     │  │  │  ├─ expression
+      │  │  │     │     │  │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  └─ name: this
+      │  │  │     │     │  │  │  └─ memberName: totalSupply
+      │  │  │     │     │  │  └─ memberName: selector
+      │  │  │     │     │  └─ right
+      │  │  │     │     │     ├─ type: MemberAccess
+      │  │  │     │     │     ├─ expression
+      │  │  │     │     │     │  ├─ type: MemberAccess
+      │  │  │     │     │     │  ├─ expression
+      │  │  │     │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │     │  │  └─ name: this
+      │  │  │     │     │     │  └─ memberName: tokenByIndex
+      │  │  │     │     │     └─ memberName: selector
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: MemberAccess
+      │  │  │     │        ├─ expression
+      │  │  │     │        │  ├─ type: MemberAccess
+      │  │  │     │        │  ├─ expression
+      │  │  │     │        │  │  ├─ type: Identifier
+      │  │  │     │        │  │  └─ name: this
+      │  │  │     │        │  └─ memberName: tokenOfOwnerByIndex
+      │  │  │     │        └─ memberName: selector
+      │  │  │     └─ 5
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: TupleExpression
+      │  │  │           ├─ components
+      │  │  │           │  ├─ 0
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: erc721TokenReceiver
+      │  │  │           │  ├─ 1
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: erc165
+      │  │  │           │  ├─ 2
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: erc721Id
+      │  │  │           │  ├─ 3
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: erc721MetadataId
+      │  │  │           │  └─ 4
+      │  │  │           │     ├─ type: Identifier
+      │  │  │           │     └─ name: erc721EnumerableId
+      │  │  │           └─ isArray: false
+      │  │  ├─ visibility: private
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: pure
+      │  └─ 41
+      │     ├─ type: FunctionDefinition
+      │     ├─ name: onERC721Received
+      │     ├─ parameters
+      │     │  ├─ 0
+      │     │  │  ├─ type: VariableDeclaration
+      │     │  │  ├─ typeName
+      │     │  │  │  ├─ type: ElementaryTypeName
+      │     │  │  │  ├─ name: address
+      │     │  │  │  └─ stateMutability
+      │     │  │  ├─ name: _operator
+      │     │  │  ├─ identifier
+      │     │  │  │  ├─ type: Identifier
+      │     │  │  │  └─ name: _operator
+      │     │  │  ├─ storageLocation
+      │     │  │  ├─ isStateVar: false
+      │     │  │  ├─ isIndexed: false
+      │     │  │  └─ expression
+      │     │  ├─ 1
+      │     │  │  ├─ type: VariableDeclaration
+      │     │  │  ├─ typeName
+      │     │  │  │  ├─ type: ElementaryTypeName
+      │     │  │  │  ├─ name: address
+      │     │  │  │  └─ stateMutability
+      │     │  │  ├─ name: _from
+      │     │  │  ├─ identifier
+      │     │  │  │  ├─ type: Identifier
+      │     │  │  │  └─ name: _from
+      │     │  │  ├─ storageLocation
+      │     │  │  ├─ isStateVar: false
+      │     │  │  ├─ isIndexed: false
+      │     │  │  └─ expression
+      │     │  ├─ 2
+      │     │  │  ├─ type: VariableDeclaration
+      │     │  │  ├─ typeName
+      │     │  │  │  ├─ type: ElementaryTypeName
+      │     │  │  │  ├─ name: uint256
+      │     │  │  │  └─ stateMutability
+      │     │  │  ├─ name: _tokenId
+      │     │  │  ├─ identifier
+      │     │  │  │  ├─ type: Identifier
+      │     │  │  │  └─ name: _tokenId
+      │     │  │  ├─ storageLocation
+      │     │  │  ├─ isStateVar: false
+      │     │  │  ├─ isIndexed: false
+      │     │  │  └─ expression
+      │     │  └─ 3
+      │     │     ├─ type: VariableDeclaration
+      │     │     ├─ typeName
+      │     │     │  ├─ type: ElementaryTypeName
+      │     │     │  ├─ name: bytes
+      │     │     │  └─ stateMutability
+      │     │     ├─ name: _data
+      │     │     ├─ identifier
+      │     │     │  ├─ type: Identifier
+      │     │     │  └─ name: _data
+      │     │     ├─ storageLocation: calldata
+      │     │     ├─ isStateVar: false
+      │     │     ├─ isIndexed: false
+      │     │     └─ expression
+      │     ├─ returnParameters
+      │     │  └─ 0
+      │     │     ├─ type: VariableDeclaration
+      │     │     ├─ typeName
+      │     │     │  ├─ type: ElementaryTypeName
+      │     │     │  ├─ name: bytes4
+      │     │     │  └─ stateMutability
+      │     │     ├─ name
+      │     │     ├─ identifier
+      │     │     ├─ storageLocation
+      │     │     ├─ isStateVar: false
+      │     │     ├─ isIndexed: false
+      │     │     └─ expression
+      │     ├─ body
+      │     │  ├─ type: Block
+      │     │  └─ statements
+      │     │     ├─ 0
+      │     │     │  ├─ type: VariableDeclarationStatement
+      │     │     │  ├─ variables
+      │     │     │  │  └─ 0
+      │     │     │  │     ├─ type: VariableDeclaration
+      │     │     │  │     ├─ typeName
+      │     │     │  │     │  ├─ type: UserDefinedTypeName
+      │     │     │  │     │  └─ namePath: IERC721TokenReceiver
+      │     │     │  │     ├─ name: recipientContract
+      │     │     │  │     ├─ identifier
+      │     │     │  │     │  ├─ type: Identifier
+      │     │     │  │     │  └─ name: recipientContract
+      │     │     │  │     ├─ storageLocation
+      │     │     │  │     ├─ isStateVar: false
+      │     │     │  │     ├─ isIndexed: false
+      │     │     │  │     └─ expression
+      │     │     │  └─ initialValue
+      │     │     │     ├─ type: FunctionCall
+      │     │     │     ├─ expression
+      │     │     │     │  ├─ type: Identifier
+      │     │     │     │  └─ name: IERC721TokenReceiver
+      │     │     │     ├─ arguments
+      │     │     │     │  └─ 0
+      │     │     │     │     ├─ type: Identifier
+      │     │     │     │     └─ name: recipientContractAddress
+      │     │     │     ├─ names
+      │     │     │     └─ identifiers
+      │     │     └─ 1
+      │     │        ├─ type: ReturnStatement
+      │     │        └─ expression
+      │     │           ├─ type: FunctionCall
+      │     │           ├─ expression
+      │     │           │  ├─ type: MemberAccess
+      │     │           │  ├─ expression
+      │     │           │  │  ├─ type: Identifier
+      │     │           │  │  └─ name: recipientContract
+      │     │           │  └─ memberName: onERC721Received
+      │     │           ├─ arguments
+      │     │           │  ├─ 0
+      │     │           │  │  ├─ type: Identifier
+      │     │           │  │  └─ name: _operator
+      │     │           │  ├─ 1
+      │     │           │  │  ├─ type: Identifier
+      │     │           │  │  └─ name: _from
+      │     │           │  ├─ 2
+      │     │           │  │  ├─ type: Identifier
+      │     │           │  │  └─ name: _tokenId
+      │     │           │  └─ 3
+      │     │           │     ├─ type: Identifier
+      │     │           │     └─ name: _data
+      │     │           ├─ names
+      │     │           └─ identifiers
+      │     ├─ visibility: external
+      │     ├─ modifiers
+      │     ├─ override
+      │     ├─ isConstructor: false
+      │     ├─ isReceiveEther: false
+      │     ├─ isFallback: false
+      │     ├─ isVirtual: false
+      │     └─ stateMutability
+      └─ kind: contract

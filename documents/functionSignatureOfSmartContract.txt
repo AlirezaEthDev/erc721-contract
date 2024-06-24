@@ -1,0 +1,22 @@
+| Function Name | Sighash    | Function Signature | 
+| ------------- | ---------- | ------------------ | 
+| supportsInterface | 01ffc9a7 | supportsInterface(bytes4) |
+| name | 06fdde03 | name() |
+| symbol | 95d89b41 | symbol() |
+| mint | 94d008ef | mint(address,uint256,bytes) |
+| burn | 42966c68 | burn(uint256) |
+| totalSupply | 18160ddd | totalSupply() |
+| tokenURI | c87b56dd | tokenURI(uint256) |
+| tokenByIndex | 4f6ccce7 | tokenByIndex(uint256) |
+| balanceOf | 70a08231 | balanceOf(address) |
+| tokenOfOwnerByIndex | 2f745c59 | tokenOfOwnerByIndex(address,uint256) |
+| ownerOf | 6352211e | ownerOf(uint256) |
+| collectionRename | 1e642a04 | collectionRename(bytes,bytes) |
+| safeTransferFrom | b88d4fde | safeTransferFrom(address,address,uint256,bytes) |
+| safeTransferFrom | 42842e0e | safeTransferFrom(address,address,uint256) |
+| transferFrom | 23b872dd | transferFrom(address,address,uint256) |
+| approve | 095ea7b3 | approve(address,uint256) |
+| setApprovalForAll | a22cb465 | setApprovalForAll(address,bool) |
+| getApproved | 081812fc | getApproved(uint256) |
+| isApprovedForAll | e985e9c5 | isApprovedForAll(address,address) |
+| onERC721Received | 150b7a02 | onERC721Received(address,address,uint256,bytes) |

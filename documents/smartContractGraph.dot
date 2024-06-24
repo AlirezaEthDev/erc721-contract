@@ -1,0 +1,96 @@
+digraph G {
+  graph [ ratio = "auto", page = "100", compound =true, bgcolor = "#2e3e56" ];
+  node [ style = "filled", fillcolor = "#edad56", color = "#edad56", penwidth =3 ];
+  edge [ color = "#fcfcfc", penwidth =2, fontname = "helvetica Neue Ultra Light" ];
+subgraph "clusterERC721" {
+  graph [ label = "ERC721", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "ERC721.justTransfer" [ label = "justTransfer", color = "#1bc6a6", shape =doubleoctagon ];
+  "ERC721.<Constructor>" [ label = "<Constructor>", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC721.supportsInterface" [ label = "supportsInterface", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.name" [ label = "name", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.symbol" [ label = "symbol", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.mint" [ label = "mint", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.burn" [ label = "burn", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.totalSupply" [ label = "totalSupply", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.tokenURI" [ label = "tokenURI", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.tokenByIndex" [ label = "tokenByIndex", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.balanceOf" [ label = "balanceOf", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.tokenOfOwnerByIndex" [ label = "tokenOfOwnerByIndex", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.ownerOf" [ label = "ownerOf", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.collectionRename" [ label = "collectionRename", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.safeTransferFrom" [ label = "safeTransferFrom", color = "brown", fillcolor = "#ffbdb9" ];
+  "ERC721.transferFrom" [ label = "transferFrom", color = "brown", fillcolor = "#ffbdb9" ];
+  "ERC721.approve" [ label = "approve", color = "brown", fillcolor = "#ffbdb9" ];
+  "ERC721.setApprovalForAll" [ label = "setApprovalForAll", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.getApproved" [ label = "getApproved", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.isApprovedForAll" [ label = "isApprovedForAll", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "ERC721.interfaceIdGenerator" [ label = "interfaceIdGenerator" ];
+  "ERC721.onERC721Received" [ label = "onERC721Received" ];
+  "ERC721.Transfer" [ label = "Transfer" ];
+  "ERC721.Approval" [ label = "Approval" ];
+  "ERC721.ApprovalForAll" [ label = "ApprovalForAll" ];
+  "ERC721.IERC721TokenReceiver" [ label = "IERC721TokenReceiver" ];
+}
+
+subgraph "clusterIERC721TokenReceiver" {
+  graph [ label = "IERC721TokenReceiver", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "IERC721TokenReceiver.onERC721Received" [ label = "onERC721Received" ];
+}
+
+  "ERC721.justTransfer";
+  "ERC721.Transfer";
+  "ERC721.Approval";
+  "ERC721.<Constructor>";
+  "ERC721.interfaceIdGenerator";
+  "ERC721.mint";
+  "ERC721.onERC721Received";
+  "ERC721.burn";
+  "ERC721.safeTransferFrom";
+  "ERC721.transferFrom";
+  "ERC721.approve";
+  "ERC721.setApprovalForAll";
+  "ERC721.ApprovalForAll";
+  "ERC721.IERC721TokenReceiver";
+  "IERC721TokenReceiver.onERC721Received";
+  "ERC721.justTransfer" -> "ERC721.Transfer" [ color = "#1bc6a6" ];
+  "ERC721.justTransfer" -> "ERC721.Approval" [ color = "#1bc6a6" ];
+  "ERC721.<Constructor>" -> "ERC721.interfaceIdGenerator" [ color = "#1bc6a6" ];
+  "ERC721.mint" -> "ERC721.Transfer" [ color = "#1bc6a6" ];
+  "ERC721.mint" -> "ERC721.onERC721Received" [ color = "#80e097" ];
+  "ERC721.burn" -> "ERC721.Transfer" [ color = "#1bc6a6" ];
+  "ERC721.safeTransferFrom" -> "ERC721.onERC721Received" [ color = "#80e097" ];
+  "ERC721.safeTransferFrom" -> "ERC721.safeTransferFrom" [ color = "#80e097" ];
+  "ERC721.transferFrom" -> "ERC721.Transfer" [ color = "#1bc6a6" ];
+  "ERC721.transferFrom" -> "ERC721.Approval" [ color = "#1bc6a6" ];
+  "ERC721.approve" -> "ERC721.Approval" [ color = "#1bc6a6" ];
+  "ERC721.setApprovalForAll" -> "ERC721.ApprovalForAll" [ color = "#1bc6a6" ];
+  "ERC721.onERC721Received" -> "ERC721.IERC721TokenReceiver" [ color = "#1bc6a6" ];
+  "ERC721.onERC721Received" -> "IERC721TokenReceiver.onERC721Received" [ color = "white" ];
+
+
+rankdir=LR
+node [shape=plaintext]
+subgraph cluster_01 { 
+label = "Legend";
+key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td align="right" port="i1">Internal Call</td></tr>
+  <tr><td align="right" port="i2">External Call</td></tr>
+  <tr><td align="right" port="i3">Defined Contract</td></tr>
+  <tr><td align="right" port="i4">Undefined Contract</td></tr>
+  </table>>]
+key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td port="i1">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i2">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i3" bgcolor="#445773">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i4">
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="7" color="#e8726d">
+      <tr>
+       <td></td>
+      </tr>
+     </table>
+  </td></tr>
+  </table>>]
+key:i1:e -> key2:i1:w [color="#1bc6a6"]
+key:i2:e -> key2:i2:w [color="white"]
+}
+}

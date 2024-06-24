@@ -1,0 +1,80 @@
+ Sūrya's Description Report
+
+ Files Description Table
+
+
+|  File Name  |  SHA-1 Hash  |
+|-------------|--------------|
+| e:\smartContract\contracts\erc721.sol | 355b3e7e1a9ec578d1431a90d25a1210f6e77847 |
+| e:\smartContract\interface\IERC721TokenReceiver.sol | 24797bfd606335125b4908e9801f8d520a85b083 |
+| e:\smartContract\interface\IERC165.sol | ddaa0996261a07ebf3c6a62736c4eecbbfc7b63c |
+| e:\smartContract\interface\IERC721.sol | 1104efae0c32dfaf49db789ea1b54a896b5bd8bb |
+| e:\smartContract\interface\IERC721Metadata.sol | dcad31d7f601d68c5b21a4d08a7ccbe9348b064e |
+| e:\smartContract\interface\IERC721Enumerable.sol | 8d383150000430e9792e317906c3c1d872317602 |
+
+
+ Contracts Description Table
+
+
+|  Contract  |         Type        |       Bases      |                  |                 |
+|:----------:|:-------------------:|:----------------:|:----------------:|:---------------:|
+|     └      |  **Function Name**  |  **Visibility**  |  **Mutability**  |  **Modifiers**  |
+||||||
+| **ERC721** | Implementation | IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC721Enumerable |||
+| └ | <Constructor> | Public ❗️ | 🛑  |NO❗️ |
+| └ | supportsInterface | External ❗️ |   |NO❗️ |
+| └ | name | External ❗️ |   |NO❗️ |
+| └ | symbol | External ❗️ |   |NO❗️ |
+| └ | mint | External ❗️ | 🛑  |NO❗️ |
+| └ | burn | External ❗️ | 🛑  |NO❗️ |
+| └ | totalSupply | External ❗️ |   |NO❗️ |
+| └ | tokenURI | External ❗️ |   |NO❗️ |
+| └ | tokenByIndex | External ❗️ |   |NO❗️ |
+| └ | balanceOf | External ❗️ |   |NO❗️ |
+| └ | tokenOfOwnerByIndex | External ❗️ |   |NO❗️ |
+| └ | ownerOf | External ❗️ |   |NO❗️ |
+| └ | collectionRename | External ❗️ | 🛑  |NO❗️ |
+| └ | safeTransferFrom | External ❗️ |  💵 | justTransfer |
+| └ | safeTransferFrom | External ❗️ |  💵 |NO❗️ |
+| └ | transferFrom | External ❗️ |  💵 | justTransfer |
+| └ | approve | External ❗️ |  💵 |NO❗️ |
+| └ | setApprovalForAll | External ❗️ | 🛑  |NO❗️ |
+| └ | getApproved | External ❗️ |   |NO❗️ |
+| └ | isApprovedForAll | External ❗️ |   |NO❗️ |
+| └ | interfaceIdGenerator | Private 🔐 |   | |
+| └ | onERC721Received | External ❗️ | 🛑  |NO❗️ |
+||||||
+| **IERC721TokenReceiver** | Interface |  |||
+| └ | onERC721Received | External ❗️ | 🛑  |NO❗️ |
+||||||
+| **IERC165** | Interface |  |||
+| └ | supportsInterface | External ❗️ |   |NO❗️ |
+||||||
+| **IERC721** | Interface |  |||
+| └ | balanceOf | External ❗️ |   |NO❗️ |
+| └ | ownerOf | External ❗️ |   |NO❗️ |
+| └ | safeTransferFrom | External ❗️ |  💵 |NO❗️ |
+| └ | safeTransferFrom | External ❗️ |  💵 |NO❗️ |
+| └ | transferFrom | External ❗️ |  💵 |NO❗️ |
+| └ | approve | External ❗️ |  💵 |NO❗️ |
+| └ | setApprovalForAll | External ❗️ | 🛑  |NO❗️ |
+| └ | getApproved | External ❗️ |   |NO❗️ |
+| └ | isApprovedForAll | External ❗️ |   |NO❗️ |
+||||||
+| **IERC721Metadata** | Interface |  |||
+| └ | name | External ❗️ |   |NO❗️ |
+| └ | symbol | External ❗️ |   |NO❗️ |
+| └ | tokenURI | External ❗️ |   |NO❗️ |
+||||||
+| **ERC721Enumerable** | Interface |  |||
+| └ | totalSupply | External ❗️ |   |NO❗️ |
+| └ | tokenByIndex | External ❗️ |   |NO❗️ |
+| └ | tokenOfOwnerByIndex | External ❗️ |   |NO❗️ |
+
+
+ Legend
+
+|  Symbol  |  Meaning  |
+|:--------:|-----------|
+|    🛑    | Function can modify state |
+|    💵    | Function is payable |
