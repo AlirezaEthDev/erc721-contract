@@ -79,6 +79,8 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         uint lastNftIndex = lastNftIndexOfOwner[_to];
         nftListOfOwner[_from][nftIndex] = 0;
         nftListOfOwner[_to][lastNftIndex ++] = _tokenId;
+        emit Transfer(_from, _to, _tokenId);
+        emit Approval(msg.sender, address(0x0), _tokenId);
         _;
     }
 
@@ -87,9 +89,9 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         collectionOwner = msg.sender;
         collectionName = nameOfCollection;
         collectionSymbol = symbolOfCollection;
-        (bytes4 erc721Id, bytes4 erc721MetadataId, bytes4 erc721EnumerableId) = interfaceIdGenerator();
-        supportedInterfaces[this.onERC721Received.selector] = true;
-        supportedInterfaces[this.supportsInterface.selector] = true;
+        (bytes4 erc721TokenReceiver, bytes4 erc165, bytes4 erc721Id, bytes4 erc721MetadataId, bytes4 erc721EnumerableId) = interfaceIdGenerator();
+        supportedInterfaces[erc721TokenReceiver] = true;
+        supportedInterfaces[erc165] = true;
         supportedInterfaces[erc721Id] = true;
         supportedInterfaces[erc721MetadataId] = true;
         supportedInterfaces[erc721EnumerableId] = true;
@@ -109,6 +111,8 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
     }
 
     function mint(address ownerAddress, uint256 tokenId, bytes calldata metadataURI) external returns (bool){
+        require(ownerAddress != address(0x0), "09");
+        // 09: Owner address is zero!
         require(collectionOwner == msg.sender, "07");
         // 07: Only the owner of collection can do this job!
         uint lastNftIndex = lastNftIndexOfOwner[ownerAddress];
@@ -123,6 +127,7 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         totalSupplyCounter ++;
         lastNftIndexOfCollection ++;
         uint codeSize;
+        emit Transfer(address(0x0), ownerAddress, tokenId);
         assembly{
             codeSize := extcodesize(ownerAddress)
         }
@@ -132,7 +137,6 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
             require(functionSelector == bytes4(keccak256("onERC721Received(address,address,uint256,bytes)")), "04");
             // 04: The recipient contract couldn't handle the NFT receipt!
         }
-        emit Transfer(address(0x0), ownerAddress, tokenId);
         return true;
     }
 
@@ -202,8 +206,6 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
             require(functionSelector == bytes4(keccak256("onERC721Received(address,address,uint256,bytes)")), "04");
             // 04: The recipient contract couldn't handle the NFT receipt!
         }
-        emit Transfer(_from, _to, _tokenId);
-        emit Approval(msg.sender, address(0x0), _tokenId);
     }
 
     function safeTransferFrom(address _from, address _to, uint256 _tokenId) external override payable{
@@ -235,7 +237,10 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         return approvedForAllNFTsOf[_owner][_operator];
     }
 
-    function interfaceIdGenerator() private pure returns(bytes4, bytes4, bytes4){
+    function interfaceIdGenerator() private pure returns(bytes4, bytes4, bytes4, bytes4, bytes4){
+        bytes4 erc721TokenReceiver = this.onERC721Received.selector;
+        bytes4 erc165 = this.supportsInterface.selector;
+
             bytes4 erc721Id = bytes4(keccak256("balanceOf(address)")) ^
                             bytes4(keccak256("ownerOf(uint256)")) ^
                             bytes4(keccak256("safeTransferFrom(address,address,uint256,bytes)")) ^
@@ -247,7 +252,7 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
                             bytes4(keccak256("isApprovedForAll(address,address)"));
             bytes4 erc721MetadataId = this.name.selector ^ this.symbol.selector ^ this.tokenURI.selector;
             bytes4 erc721EnumerableId = this.totalSupply.selector ^ this.tokenByIndex.selector ^ this.tokenOfOwnerByIndex.selector;
-            return (erc721Id, erc721MetadataId, erc721EnumerableId);
+            return (erc721TokenReceiver, erc165, erc721Id, erc721MetadataId, erc721EnumerableId);
     }
     function onERC721Received(address _operator, address _from, uint256 _tokenId, bytes calldata _data) external override returns(bytes4){
         IERC721TokenReceiver recipientContract = IERC721TokenReceiver(recipientContractAddress);
