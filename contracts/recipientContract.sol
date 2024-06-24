@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.5.12;
+pragma solidity ^0.8.0;
 
 // This is a sample contract that receives NFTs from ERC721 contract.
 // We just implement the base functionalities that this contract must execute to handle the NFT receipt.
