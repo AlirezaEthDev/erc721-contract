@@ -17,7 +17,7 @@ This contract depends on the following interfaces:
  * IERC721Metadata
  * IERC721Enumerable
 
-Note: These interfaces defined in separate file called `interface` and imported to the main contract.
+Note: These interfaces defined in separate folder called `interface` and they were imported to the main contract.
 
 # Usage
  * Deploy the contract with a collection name and symbol.
