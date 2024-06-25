@@ -24,7 +24,6 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
     event CollectionRename(bytes previousName, bytes currentName, bytes previousSymbol, bytes currentSymbol);
 
     //Mappings
-    mapping(bytes4 => bool) private supportedInterfaces;
     mapping(address => uint256) private nftCountOfOwner;
     mapping(address => mapping(uint => uint256)) private nftListOfOwner;
     mapping(address => mapping(uint256 => uint)) private nftIndexOfOwner;
@@ -58,17 +57,25 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         collectionOwner = msg.sender;
         collectionName = nameOfCollection;
         collectionSymbol = symbolOfCollection;
-        (bytes4 erc721TokenReceiver, bytes4 erc165, bytes4 erc721Id, bytes4 erc721MetadataId, bytes4 erc721EnumerableId) = interfaceIdGenerator();
-        supportedInterfaces[erc721TokenReceiver] = true;
-        supportedInterfaces[erc165] = true;
-        supportedInterfaces[erc721Id] = true;
-        supportedInterfaces[erc721MetadataId] = true;
-        supportedInterfaces[erc721EnumerableId] = true;
         emit CollectionCreate(collectionOwner, collectionName, collectionSymbol);
     }
 
-    function supportsInterface(bytes4 interfaceID) external override view returns (bool){
-        return supportedInterfaces[interfaceID];
+    function supportsInterface(bytes4 interfaceID) external override pure returns (bool){
+        bool ierc721TokenReceiverId = (interfaceID == this.onERC721Received.selector);
+        bool ierc165Id = (interfaceID == this.supportsInterface.selector);
+        bool ierc721Id = (interfaceID == bytes4(keccak256("balanceOf(address)")) ^
+                            bytes4(keccak256("ownerOf(uint256)")) ^
+                            bytes4(keccak256("safeTransferFrom(address,address,uint256,bytes)")) ^
+                            bytes4(keccak256("safeTransferFrom(address,address,uint256)")) ^
+                            bytes4(keccak256("transferFrom(address,address,uint256)")) ^
+                            bytes4(keccak256("approve(address,uint256)")) ^
+                            bytes4(keccak256("setApprovalForAll(address,bool)")) ^
+                            bytes4(keccak256("getApproved(uint256)")) ^
+                            bytes4(keccak256("isApprovedForAll(address,address)")));
+        bool ierc721MetadataId = (interfaceID == this.name.selector ^ this.symbol.selector ^ this.tokenURI.selector);
+        bool ierc721EnumerableId = (interfaceID == this.totalSupply.selector ^ this.tokenByIndex.selector ^ this.tokenOfOwnerByIndex.selector);
+        return (ierc721TokenReceiverId || ierc165Id || ierc721Id || ierc721MetadataId || ierc721EnumerableId);
+        
     }
 
     function name() external override view returns (string memory){
@@ -206,23 +213,6 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         return approvedForAllNFTsOf[_owner][_operator];
     }
 
-    function interfaceIdGenerator() private pure returns(bytes4, bytes4, bytes4, bytes4, bytes4){
-        bytes4 erc721TokenReceiver = this.onERC721Received.selector;
-        bytes4 erc165 = this.supportsInterface.selector;
-
-            bytes4 erc721Id = bytes4(keccak256("balanceOf(address)")) ^
-                            bytes4(keccak256("ownerOf(uint256)")) ^
-                            bytes4(keccak256("safeTransferFrom(address,address,uint256,bytes)")) ^
-                            bytes4(keccak256("safeTransferFrom(address,address,uint256)")) ^
-                            bytes4(keccak256("transferFrom(address,address,uint256)")) ^
-                            bytes4(keccak256("approve(address,uint256)")) ^
-                            bytes4(keccak256("setApprovalForAll(address,bool)")) ^
-                            bytes4(keccak256("getApproved(uint256)")) ^
-                            bytes4(keccak256("isApprovedForAll(address,address)"));
-            bytes4 erc721MetadataId = this.name.selector ^ this.symbol.selector ^ this.tokenURI.selector;
-            bytes4 erc721EnumerableId = this.totalSupply.selector ^ this.tokenByIndex.selector ^ this.tokenOfOwnerByIndex.selector;
-            return (erc721TokenReceiver, erc165, erc721Id, erc721MetadataId, erc721EnumerableId);
-    }
     function onERC721Received(address _operator, address _from, uint256 _tokenId, bytes calldata _data) external override returns(bytes4){
         IERC721TokenReceiver recipientContract = IERC721TokenReceiver(recipientContractAddress);
         return recipientContract.onERC721Received(_operator, _from, _tokenId, _data);
