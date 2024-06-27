@@ -19,34 +19,63 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
     uint public totalSupplyCounter;
     uint public lastNftIndexOfCollection;
 
+    // Structs
+    struct NFT{
+        uint256 nftId;
+        address ownerAddress;
+        address[] approved;
+        bytes metadataURI;
+        mapping(address => bool) approvedList;
+        uint256 indexInCollection;
+        uint indexOfOwner;
+    }
+
+    struct Owner{
+        //address ownerAddress;
+        uint nftCount;
+        uint lastNFTIndex;
+        mapping(uint => uint256) nftListOfOwner;
+        mapping(address => bool) approvedForAllNFTs;
+    }
+
     //Events
     event CollectionCreate(address ownerOfCollection, bytes nameOfCollection, bytes symbolOfCollection);
     event CollectionRename(bytes previousName, bytes currentName, bytes previousSymbol, bytes currentSymbol);
 
     //Mappings
-    mapping(address => uint256) private nftCountOfOwner;
-    mapping(address => mapping(uint => uint256)) private nftListOfOwner;
-    mapping(address => mapping(uint256 => uint)) private nftIndexOfOwner;
-    mapping(address => uint) private lastNftIndexOfOwner;
-    mapping(uint256 => address) private nftOwner;
-    mapping(uint256 => bytes) private uriOf;
-    mapping(uint256 => address) private approvedOf;
-    mapping(address => mapping(address => bool)) private approvedForAllNFTsOf;
-    mapping(uint => uint256) private nftFromCollection;
-    mapping(uint256 => uint) private nftIndexInCollection;
+    mapping(uint256 => NFT) private nftList;
+    mapping(address => Owner) private ownerList;
+    //mapping(address => uint256) private nftCountOfOwner;
+    //mapping(address => mapping(uint => uint256)) private nftListOfOwner;
+    //mapping(address => mapping(uint256 => uint)) private nftIndexOfOwner;
+    //mapping(address => uint) private lastNftIndexOfOwner;
+    //mapping(uint256 => address) private nftOwner;
+    //mapping(uint256 => bytes) private uriOf;
+    //mapping(uint256 => address) private approvedOf;
+    //mapping(address => mapping(address => bool)) private approvedForAllNFTsOf;
+    mapping(uint => NFT) private nftFromCollection;
+    //mapping(uint256 => uint) private nftIndexInCollection;
 
     //Modifiers
     modifier justTransfer(address _from, address _to, uint256 _tokenId) {
-        require( nftOwner[_tokenId] != address(0x0) && (nftOwner[_tokenId] == tx.origin || approvedOf[_tokenId] == tx.origin || approvedForAllNFTsOf[_from][tx.origin]) && nftOwner[_tokenId] == _from && _to != address(0x0), "03");
+        require( nftList[_tokenId].ownerAddress != address(0x0) && (nftList[_tokenId].ownerAddress == tx.origin || nftList[_tokenId].approvedList[tx.origin] || ownerList[_from].approvedForAllNFTs[tx.origin]) && nftList[_tokenId].ownerAddress == _from && _to != address(0x0), "03");
+        //require( nftOwner[_tokenId] != address(0x0) && (nftOwner[_tokenId] == tx.origin || approvedOf[_tokenId] == tx.origin || approvedForAllNFTsOf[_from][tx.origin]) && nftOwner[_tokenId] == _from && _to != address(0x0), "03");
         // 03: At least one of input data is not valid!
         // Transfer NFT:
-        nftOwner[_tokenId] = _to;
-        nftCountOfOwner[_from] --;
-        nftCountOfOwner[_to] ++;
-        uint nftIndex = nftIndexOfOwner[_from][_tokenId];
-        uint lastNftIndex = lastNftIndexOfOwner[_to];
-        nftListOfOwner[_from][nftIndex] = 0;
-        nftListOfOwner[_to][lastNftIndex ++] = _tokenId;
+        uint nftIndex = nftList[_tokenId].indexOfOwner;
+        ownerList[_from].nftListOfOwner[nftIndex] = 0;
+        nftList[_tokenId].ownerAddress = _to;
+        ownerList[_from].nftCount --;
+        ownerList[_to].nftCount ++;
+        ownerList[_to].lastNFTIndex ++;
+        ownerList[_to].nftListOfOwner[ownerList[_to].lastNFTIndex] = _tokenId;
+        //nftOwner[_tokenId] = _to;
+        //nftCountOfOwner[_from] --;
+        //nftCountOfOwner[_to] ++;
+        //uint nftIndex = nftIndexOfOwner[_from][_tokenId];
+        //uint lastNftIndex = lastNftIndexOfOwner[_to];
+        //nftListOfOwner[_from][nftIndex] = 0;
+        //nftListOfOwner[_to][lastNftIndex ++] = _tokenId;
         emit Transfer(_from, _to, _tokenId);
         emit Approval(msg.sender, address(0x0), _tokenId);
         _;
@@ -91,15 +120,25 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
         // 09: Owner address is zero!
         require(collectionOwner == msg.sender, "07");
         // 07: Only the owner of collection can do this job!
-        uint lastNftIndex = lastNftIndexOfOwner[ownerAddress];
+        NFT memory newNFT;
+        newNFT.nftId = tokenId;
+        newNFT.ownerAddress = ownerAddress;
+        newNFT.metadataURI = metadataURI;
+        newNFT.indexInCollection = lastNftIndexOfCollection;
+        nftList[tokenId] = newNFT;
+        ownerList[ownerAddress].lastNFTIndex ++;
+        ownerList[ownerAddress].nftListOfOwner[ownerList[ownerAddress].lastNFTIndex] = _tokenId;
+        nftList[tokenId].indexOfOwner = ownerList[ownerAddress].lastNFTIndex;
+        /*uint lastNftIndex = lastNftIndexOfOwner[ownerAddress];
         nftListOfOwner[ownerAddress][lastNftIndex ++] = tokenId;
-        nftIndexOfOwner[ownerAddress][tokenId] = lastNftIndex;
-        nftFromCollection[lastNftIndexOfCollection] = tokenId;
-        nftIndexInCollection[tokenId] = lastNftIndexOfCollection;
-        nftOwner[tokenId] = ownerAddress;
+        nftIndexOfOwner[ownerAddress][tokenId] = lastNftIndex;*/
+        nftFromCollection[lastNftIndexOfCollection] = newNFT;
+        ownerList[ownerAddress].nftCount ++;
+        //nftIndexInCollection[tokenId] = lastNftIndexOfCollection;
+        /*nftOwner[tokenId] = ownerAddress;
         uriOf[tokenId] = metadataURI;
         nftCountOfOwner[ownerAddress] ++;
-        lastNftIndexOfOwner[ownerAddress] ++;
+        lastNftIndexOfOwner[ownerAddress] ++;*/
         totalSupplyCounter ++;
         lastNftIndexOfCollection ++;
         uint codeSize;
@@ -189,8 +228,8 @@ contract ERC721 is IERC165, IERC721, IERC721TokenReceiver, IERC721Metadata, ERC7
     }
 
     function transferFrom(address _from, address _to, uint256 _tokenId) external override justTransfer(_from, _to, _tokenId) payable{
-        emit Transfer(_from, _to, _tokenId);
-        emit Approval(msg.sender, address(0x0), _tokenId);
+       // emit Transfer(_from, _to, _tokenId);
+       // emit Approval(msg.sender, address(0x0), _tokenId);
     }
 
     function approve(address _approved, uint256 _tokenId) external override payable{
