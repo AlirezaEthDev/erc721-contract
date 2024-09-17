@@ -1,0 +1,16 @@
+{
+  "name": "erc721-contract",
+  "version": "1.0.0",
+  "description": " The project implements the ERC-721 standard, allowing for the creation, management, and trading of unique digital assets.",
+  "main": "index.js",
+  "repository": "git@github.com:AlirezaEthDev/erc721-contract.git",
+  "author": "AlirezaEthDev <alirezaethdev@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "hardhat": "^2.22.10"
+  },
+  "dependencies": {
+    "web3": "^4.12.1"
+  }
+}
